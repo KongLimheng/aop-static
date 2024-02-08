@@ -1,0 +1,29 @@
+<!-- For more features use the AutoHTML plugin window in figma ... --> 
+<svg class="vector" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  	<path d="M17 11.0044C14.4582 12.0322 11.7417 12.5589 9 12.5556C6.17067 12.5556 3.47111 12.0044 1 11.0044M12.5556 4.55556V2.77778C12.5556 2.30628 12.3683 1.8541 12.0349 1.5207C11.7015 1.1873 11.2493 1 10.7778 1H7.22222C6.75073 1 6.29854 1.1873 5.96514 1.5207C5.63175 1.8541 5.44444 2.30628 5.44444 2.77778V4.55556M9 9.88889H9.00889M2.77778 17H15.2222C15.6937 17 16.1459 16.8127 16.4793 16.4793C16.8127 16.1459 17 15.6937 17 15.2222V6.33333C17 5.86184 16.8127 5.40965 16.4793 5.07625C16.1459 4.74286 15.6937 4.55556 15.2222 4.55556H2.77778C2.30628 4.55556 1.8541 4.74286 1.5207 5.07625C1.1873 5.40965 1 5.86184 1 6.33333V15.2222C1 15.6937 1.1873 16.1459 1.5207 16.4793C1.8541 16.8127 2.30628 17 2.77778 17Z" stroke="#940000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  	<path d="M17 11.0044C14.4582 12.0322 11.7417 12.5589 9 12.5556C6.17067 12.5556 3.47111 12.0044 1 11.0044M12.5556 4.55556V2.77778C12.5556 2.30628 12.3683 1.8541 12.0349 1.5207C11.7015 1.1873 11.2493 1 10.7778 1H7.22222C6.75073 1 6.29854 1.1873 5.96514 1.5207C5.63175 1.8541 5.44444 2.30628 5.44444 2.77778V4.55556M9 9.88889H9.00889M2.77778 17H15.2222C15.6937 17 16.1459 16.8127 16.4793 16.4793C16.8127 16.1459 17 15.6937 17 15.2222V6.33333C17 5.86184 16.8127 5.40965 16.4793 5.07625C16.1459 4.74286 15.6937 4.55556 15.2222 4.55556H2.77778C2.30628 4.55556 1.8541 4.74286 1.5207 5.07625C1.1873 5.40965 1 5.86184 1 6.33333V15.2222C1 15.6937 1.1873 16.1459 1.5207 16.4793C1.8541 16.8127 2.30628 17 2.77778 17Z" stroke="url(#paint0_radial_83_125)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  	<defs>
+    		<radialGradient id="paint0_radial_83_125" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(13.4643 5.93333) rotate(21.5935) scale(13.4051 21.2826)">
+      			<stop stop-color="#121B67"/>
+      			<stop offset="0.554587" stop-color="#ED4055"/>
+      			<stop offset="0.96845" stop-color="#EDD62C"/>
+      			<stop offset="0.96855" stop-color="#EDDA2B"/>
+      			<stop offset="0.96865" stop-color="#EDDE2A"/>
+      			<stop offset="0.96875" stop-color="#EDE229"/>
+      			<stop offset="0.9992" stop-color="#615E11"/>
+      			<stop offset="0.9993" stop-color="#EDE927"/>
+      			<stop offset="0.9994" stop-color="#EDEB27"/>
+      			<stop offset="0.9995" stop-color="#EDEC26"/>
+      			<stop offset="0.9996" stop-color="#EDEE26"/>
+      			<stop offset="0.9997" stop-color="#EDF224"/>
+      			<stop offset="0.9998" stop-color="#EDF623"/>
+      			<stop offset="0.9999" stop-color="#EDFB22"/>
+      			<stop offset="1" stop-color="#EDFF21"/>
+      			<stop offset="1" stop-color="#EDFF21"/>
+      			<stop offset="1" stop-color="#EDFF21"/>
+      			<stop offset="1" stop-color="#EDFF21"/>
+      			<stop offset="1" stop-color="#EDFF21"/>
+      			<stop offset="1" stop-color="#EDFF21"/>
+    		</radialGradient>
+  	</defs>
+</svg>

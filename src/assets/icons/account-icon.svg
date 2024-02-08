@@ -1,0 +1,29 @@
+<!-- For more features use the AutoHTML plugin window in figma ... --> 
+<svg class="vector" width="21" height="14" viewBox="0 0 21 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+  	<path d="M6.125 7C8.05 7 9.625 5.425 9.625 3.5C9.625 1.575 8.05 0 6.125 0C4.2 0 2.625 1.575 2.625 3.5C2.625 5.425 4.2 7 6.125 7ZM9.625 14V9.3625C8.6625 9.0125 7.4375 8.75 6.125 8.75C2.7125 8.75 0 10.325 0 12.25V14H9.625ZM19.25 0H13.125C12.1625 0 11.375 0.7875 11.375 1.75V12.25C11.375 13.2125 12.1625 14 13.125 14H19.25C20.2125 14 21 13.2125 21 12.25V1.75C21 0.7875 20.2125 0 19.25 0ZM15.75 12.25H14V1.75H15.75V12.25Z" fill="black"/>
+  	<path d="M6.125 7C8.05 7 9.625 5.425 9.625 3.5C9.625 1.575 8.05 0 6.125 0C4.2 0 2.625 1.575 2.625 3.5C2.625 5.425 4.2 7 6.125 7ZM9.625 14V9.3625C8.6625 9.0125 7.4375 8.75 6.125 8.75C2.7125 8.75 0 10.325 0 12.25V14H9.625ZM19.25 0H13.125C12.1625 0 11.375 0.7875 11.375 1.75V12.25C11.375 13.2125 12.1625 14 13.125 14H19.25C20.2125 14 21 13.2125 21 12.25V1.75C21 0.7875 20.2125 0 19.25 0ZM15.75 12.25H14V1.75H15.75V12.25Z" fill="url(#paint0_linear_1_354)"/>
+  	<defs>
+    		<linearGradient id="paint0_linear_1_354" x1="0" y1="0" x2="21.6962" y2="20.3722" gradientUnits="userSpaceOnUse">
+      			<stop stop-color="#121B67"/>
+      			<stop offset="0.554587" stop-color="#ED4055"/>
+      			<stop offset="0.96845" stop-color="#EDD62C"/>
+      			<stop offset="0.96855" stop-color="#EDDA2B"/>
+      			<stop offset="0.96865" stop-color="#EDDE2A"/>
+      			<stop offset="0.96875" stop-color="#EDE229"/>
+      			<stop offset="0.9992" stop-color="#615E11"/>
+      			<stop offset="0.9993" stop-color="#EDE927"/>
+      			<stop offset="0.9994" stop-color="#EDEB27"/>
+      			<stop offset="0.9995" stop-color="#EDEC26"/>
+      			<stop offset="0.9996" stop-color="#EDEE26"/>
+      			<stop offset="0.9997" stop-color="#EDF224"/>
+      			<stop offset="0.9998" stop-color="#EDF623"/>
+      			<stop offset="0.9999" stop-color="#EDFB22"/>
+      			<stop offset="1" stop-color="#EDFF21"/>
+      			<stop offset="1" stop-color="#EDFF21"/>
+      			<stop offset="1" stop-color="#EDFF21"/>
+      			<stop offset="1" stop-color="#EDFF21"/>
+      			<stop offset="1" stop-color="#EDFF21"/>
+      			<stop offset="1" stop-color="#EDFF21"/>
+    		</linearGradient>
+  	</defs>
+</svg>
