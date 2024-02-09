@@ -68,9 +68,7 @@ const EService = () => {
 
                     <div className="pt-2 view-more text-gradient">
                       view more
-                      <span>
-                        <img src={ForwardArrow} alt="" width="20" />
-                      </span>
+                      <img src={ForwardArrow} alt="" width="20" />
                     </div>
 
                     <img
@@ -83,7 +81,10 @@ const EService = () => {
                   <div className="position-absolute w-100 acc-open-service">
                     <div
                       className="p-3 white-container rounded-4 p-4 position-relative"
-                      style={{ height: '200px', opacity: 0.5 }}
+                      style={{
+                        height: '200px',
+                        opacity: 0.5,
+                      }}
                     >
                       <img
                         src={PersonPlus}
@@ -98,6 +99,7 @@ const EService = () => {
             <div className="row g-3 g-lg-4 pt-3">
               {features.map((f) => (
                 <Card
+                  key={f.title}
                   title={f.title}
                   icon={f.icon}
                   background={f.background}
@@ -113,7 +115,11 @@ const EService = () => {
                 <div
                   className="p-3 rounded-4 position-relative bg-white overflow-hidden"
                   id="cus-specimen"
-                  style={{ height: '200px', zIndex: 10, cursor: 'pointer' }}
+                  style={{
+                    height: '200px',
+                    zIndex: 10,
+                    cursor: 'pointer',
+                  }}
                 >
                   <div className="card-text text-gradient">
                     Customer <br />
@@ -133,7 +139,11 @@ const EService = () => {
 
                 <div
                   className="p-3 rounded-4 position-absolute white-container w-100 overflow-hidden"
-                  style={{ height: '200px', top: 14, opacity: 0.5 }}
+                  style={{
+                    height: '200px',
+                    top: 14,
+                    opacity: 0.5,
+                  }}
                 >
                   <span className="position-absolute bottom-0 end-0">
                     <img
@@ -152,7 +162,11 @@ const EService = () => {
                 <div
                   className="p-3 rounded-4 position-relative bg-white card-bg"
                   id="amendment-acc"
-                  style={{ height: 200, zIndex: 10, cursor: 'pointer' }}
+                  style={{
+                    height: 200,
+                    zIndex: 10,
+                    cursor: 'pointer',
+                  }}
                 >
                   <div className="card-text">
                     Account <br />

@@ -1,6 +1,6 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { FolderIcon, Image93Png, ThreedotIcon } from '../assets'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { FolderIcon, Image93Png, ThreedotIcon } from '../assets';
 
 const Home = () => {
   return (
@@ -62,12 +62,6 @@ const Home = () => {
         <div className="row g-3 mx-0">
           <div className="col-12 col-md-8 col-xxl-4 image-box">
             <img
-              //     style="
-              //   width: 100%;
-              //   height: 100%;
-              //   object-position: center;
-              //   object-fit: contain;
-              // "
               style={{
                 width: '100%',
                 height: '100%',
@@ -119,7 +113,7 @@ const Home = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
