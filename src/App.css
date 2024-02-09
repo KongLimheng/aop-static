@@ -935,7 +935,7 @@ nav {
   text-decoration: none;
   color: white;
   border: transparent;
-  background-image: url('../images/bg-button.png');
+  background-image: url('./assets/icons/bg-button.png');
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
