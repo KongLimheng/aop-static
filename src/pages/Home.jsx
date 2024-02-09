@@ -1,6 +1,6 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { FolderIcon, Image93Png, ThreedotIcon } from '../assets';
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { FolderIcon, Image93Png, ThreedotIcon } from '../assets'
 
 const Home = () => {
   return (
@@ -80,7 +80,7 @@ const Home = () => {
                 objectFit: 'contain',
                 objectPosition: 'center',
               }}
-              src="/src/assets/images/Group 2.png"
+              src="/images/Group 2.png"
               alt=""
             />
           </div>
@@ -93,7 +93,7 @@ const Home = () => {
                 objectFit: 'contain',
                 objectPosition: 'center',
               }}
-              src="/src/assets/images/Group94.png"
+              src="/images/Group94.png"
               alt=""
             />
           </div>
@@ -106,14 +106,14 @@ const Home = () => {
                 objectFit: 'contain',
                 objectPosition: 'center',
               }}
-              src="/src/assets/images/image 92.png"
+              src="/images/image 92.png"
               alt=""
             />
           </div>
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

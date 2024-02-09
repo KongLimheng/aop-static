@@ -10,9 +10,9 @@ function App() {
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" index element={<Home />} />
-          <Route path="/e-services" index element={<EService />} />
-          {/* <Route path="/*" element={<div>Error</div>} /> */}
+          <Route path="/" element={<Home />} />
+          <Route path="/e-services" element={<EService />} />
+          <Route path="/*" element={<div>Error</div>} />
         </Routes>
       </Layout>
     </Router>
