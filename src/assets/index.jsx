@@ -16,6 +16,7 @@ import NidCardIcon from './icons/nid_card.svg'
 import PersonPlus from './icons/person-plus.svg'
 import PersonGradientIcon from './icons/person.svg'
 import PhoneIcon from './icons/phone.svg'
+import PlusIcon from './icons/plus.svg'
 import Profile from './icons/profile.svg'
 import SecretParseIcon from './icons/secret-parse.svg'
 import ThreedotIcon from './icons/threedot.svg'
@@ -43,6 +44,7 @@ export {
   PersonGradientIcon,
   PersonPlus,
   PhoneIcon,
+  PlusIcon,
   Profile,
   SecretParseIcon,
   ThreedotIcon,

@@ -32,6 +32,17 @@ export const accountType = [
   },
   {
     value: 'Employee Banking Account',
-    label: 'Employee Banking Account (Coporate Payroll)',
+    label: 'Employee Banking Account (Corporate Payroll)',
+  },
+]
+
+export const currency = [
+  {
+    value: 'usd',
+    label: 'USD',
+  },
+  {
+    value: 'khr',
+    label: 'KHR',
   },
 ]

@@ -9,13 +9,15 @@ import {
   NidCardIcon,
   PersonGradientIcon,
   PhoneIcon,
+  PlusIcon,
 } from '../assets'
 import CustomDatePicker from '../components/CustomDatePicker'
 import CustomInput from '../components/CustomInput'
 import CustomSelect from '../components/CustomSelect'
+import CustomSelectDouble from '../components/CustomSelectDouble'
 import OptionGroup from '../components/OptionGroup'
 import { store } from '../contexts/store'
-import { accountType, legalDocType } from '../utils/dataSelect'
+import { accountType, currency, legalDocType } from '../utils/dataSelect'
 
 const New = () => {
   const setIsMini = store((state) => state.setIsMini)
@@ -35,16 +37,7 @@ const New = () => {
       accountSetup: [
         {
           accountType,
-          currency: [
-            {
-              name: 'usd',
-              value: 'USD',
-            },
-            {
-              name: 'khr',
-              value: 'KHR',
-            },
-          ],
+          currency,
         },
       ],
       // issueDate: '',
@@ -56,8 +49,6 @@ const New = () => {
     control,
     name: 'accountSetup',
   })
-
-  console.log(fields)
 
   const submitHandler = (data) => {
     console.log(data)
@@ -256,84 +247,34 @@ const New = () => {
             {/* input field: Account Types */}
             <div className="container-fluid">
               <div className="row">
-                <div className="col-10 col-sm-11 p-2">
-                  {fields.map((item, idx) => (
-                    <CustomSelect
-                      label=""
-                      name={`acc.${idx}`}
-                      options={accountType}
-                      control={control}
-                    />
-                  ))}
-                  <div className="inputbox bg-white mt-3 d-flex align-items-center">
-                    <img
-                      src="../images/profile.svg"
-                      alt="Saving"
-                      className="position-absolute"
-                      style={{
-                        height: 15,
-                        top: 24,
-                        bottom: 0,
-                        left: 0,
-                        zIndex: 10,
-                        paddingLeft: 18,
-                      }}
-                    />
-                    <select
-                      style={{ border: 'none', height: '100%', width: '80%' }}
-                      className="input js-selector-acc"
-                      id="accountType"
-                      name="accountType"
-                    >
-                      {/* <option selected>Account Types</option> */}
-                      <option value="Saving Account">Saving Account</option>
-                      <option value="Current Account">Current Account</option>
-                      <option value="RGC Payroll Account">
-                        RGC Payroll Account
-                      </option>
-                      <option value="Smart Business Account">
-                        Smart Business Account
-                      </option>
-                      <option value="Teen Account">Teen Account</option>
-                      <option value="Wedding Account">Wedding Account</option>
-                      <option value="Employee Banking Account">
-                        Employee Banking Account (Corporate Payroll)
-                      </option>
-                    </select>
-                    <label>Account Types </label>
-                    <img
-                      src="../images/arrow-down.svg"
-                      alt="down"
-                      className="arrow-down me-4"
-                    />
-                    <div
-                      className="d-flex"
-                      style={{ borderLeft: '1px solid #797979' }}
-                    >
-                      <select
-                        className="js-selector-acc accountTypeCur"
-                        style={{
-                          width: '100%',
-                          outline: 'none',
-                          height: 30,
-                          borderLeft: '1px solid #797979 !important',
-                        }}
-                        name="accountTypeCur"
-                        id="accountTypeCur"
-                      >
-                        <option value="USD" selected="">
-                          USD
-                        </option>
-                        <option value="KHR">KHR</option>
-                      </select>
+                {fields.map((item, idx) => (
+                  <>
+                    <div className="col-10 col-sm-11 p-2">
+                      <CustomSelectDouble
+                        label="Account Type"
+                        name={`acc.${idx}`}
+                        options={accountType}
+                        control={control}
+                        key={item.id}
+                        item={item}
+                      />
                     </div>
-                    <img
-                      src="../images/arrow-down.svg"
-                      alt="down"
-                      className="arrow-down-acc-type position-absolute"
-                    />
-                  </div>
-                </div>
+
+                    <div
+                      className="col-2 col-sm-1 p-2 mt-2 d-flex justify-content-end"
+                      onClick={() => append({ accountType, currency })}
+                    >
+                      <img
+                        src={PlusIcon}
+                        id="add-acc"
+                        alt="plus"
+                        width={30}
+                        // style={{ marginTop: 10, cursor: 'pointer' }}
+                      />
+                    </div>
+                  </>
+                ))}
+
                 <div className="col-2 col-sm-1 p-2 mt-2 d-flex justify-content-end">
                   <img
                     src="../images/plus.svg"
