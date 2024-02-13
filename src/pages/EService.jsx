@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import {
   AccountCloseIcon,
@@ -11,6 +12,7 @@ import {
   PersonPlus,
 } from '../assets'
 import Card from '../components/CardFeature/Card'
+import { store } from '../contexts/store'
 
 const EService = () => {
   const features = [
@@ -30,6 +32,12 @@ const EService = () => {
       background: true,
     },
   ]
+
+  const setMaxWidth = store((state) => state.setMaxWidth)
+
+  useEffect(() => {
+    setMaxWidth('100%')
+  })
   return (
     <>
       <div>

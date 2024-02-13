@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { FolderIcon, Image93Png, ThreedotIcon } from '../assets'
+import { store } from '../contexts/store'
 
 const Home = () => {
+  const setMaxWidth = store((state) => state.setMaxWidth)
+  const setMainFlex = store((state) => state.setMainFlex)
+
+  useEffect(() => {
+    setMaxWidth('100%')
+    setMainFlex(null)
+  })
+
   return (
     <>
       <div className="d-flex align-items-start justify-content-between">
@@ -24,8 +33,7 @@ const Home = () => {
         <div className="row g-2 g-md-3 mx-0">
           <div className="col-12 col-md-6">
             <NavLink
-              className="text-black"
-              // style="text-decoration: none"
+              className="text-black text-decoration-none"
               to="/e-services"
             >
               <div className="portal-box">
@@ -39,11 +47,7 @@ const Home = () => {
             </NavLink>
           </div>
           <div className="col-12 col-md-6">
-            <NavLink
-              className="text-black"
-              // style="text-decoration: none"
-              to="#"
-            >
+            <NavLink className="text-black text-decoration-none" to="#">
               <div className="portal-box">
                 <div className="d-flex justify-content-between align-items-center">
                   <img src={FolderIcon} alt="" width={'31'} />
@@ -62,24 +66,14 @@ const Home = () => {
         <div className="row g-3 mx-0">
           <div className="col-12 col-md-8 col-xxl-4 image-box">
             <img
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain',
-                objectPosition: 'center',
-              }}
+              className="object-fit-contain w-100 h-100"
               src={Image93Png}
               alt=""
             />
           </div>
           <div className="col-6 col-md-4 col-xxl-2 image-box">
             <img
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain',
-                objectPosition: 'center',
-              }}
+              className="object-fit-contain w-100 h-100"
               src="/images/Group 2.png"
               alt=""
             />
@@ -87,12 +81,7 @@ const Home = () => {
 
           <div className="col-6 col-md-4 col-xxl-2 image-box">
             <img
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain',
-                objectPosition: 'center',
-              }}
+              className="object-fit-contain w-100 h-100"
               src="/images/Group94.png"
               alt=""
             />
