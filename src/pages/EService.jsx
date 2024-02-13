@@ -34,9 +34,11 @@ const EService = () => {
   ]
 
   const setMaxWidth = store((state) => state.setMaxWidth)
+  const setIsMini = store((state) => state.setIsMini)
 
   useEffect(() => {
     setMaxWidth('100%')
+    setIsMini(false)
   })
   return (
     <>

@@ -6,10 +6,11 @@ import { store } from '../contexts/store'
 const Home = () => {
   const setMaxWidth = store((state) => state.setMaxWidth)
   const setMainFlex = store((state) => state.setMainFlex)
+  const setIsMini = store((state) => state.setIsMini)
 
   useEffect(() => {
     setMaxWidth('100%')
-    setMainFlex(null)
+    setIsMini(false)
   })
 
   return (

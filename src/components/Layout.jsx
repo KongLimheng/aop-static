@@ -3,12 +3,12 @@ import { store } from '../contexts/store'
 
 const Layout = ({ children }) => {
   const maxWidth = store((state) => state.maxWidth)
-  const mainFlex = store((state) => state.mainFlex)
+  const isMini = store((state) => state.isMini)
 
   return (
     <div
       className={`p-4 w-100  justify-content-center align-items-center ${
-        mainFlex && 'd-flex '
+        isMini && 'd-flex '
       }`}
     >
       <div
