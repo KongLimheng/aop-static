@@ -539,7 +539,8 @@ input:autofill {
 }
 /* padding-top: 10px; */
 
-:is(.input:focus, .input:valid) ~ label {
+:is(.input:focus) ~ label,
+:is(.input:valid) ~ label {
   translate: -40px -35.5px;
   scale: 0.875;
   background: #fff;
@@ -1334,4 +1335,14 @@ nav {
   display: inline-block;
   text-align: center;
   width: 100%;
+}
+
+.btn-close {
+  --bs-btn-close-bg: url('./assets/icons/cross-icon.svg');
+  --bs-btn-close-opacity: 1;
+  background: transparent var(--bs-btn-close-bg) center/1.5em auto no-repeat;
+}
+
+.btn-close:focus {
+  box-shadow: none;
 }

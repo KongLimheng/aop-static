@@ -13,7 +13,6 @@ const CustomInput = ({ register, label, icon, required = false }) => {
           top: 12,
           bottom: 0,
           left: 0,
-          zIndex: 10,
           paddingLeft: 18,
         }}
       />
@@ -30,7 +29,7 @@ const CustomInput = ({ register, label, icon, required = false }) => {
       <label>
         {label}
         <div className="d-inline-flex" style={{ color: '#921d1d' }}>
-          *
+          {required && '*'}
         </div>
       </label>
     </div>
