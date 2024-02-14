@@ -5,4 +5,7 @@ import { defineConfig, splitVendorChunkPlugin } from 'vite'
 export default defineConfig({
   base: './',
   plugins: [react(), splitVendorChunkPlugin()],
+  build: {
+    chunkSizeWarningLimit: 1024,
+  },
 })
