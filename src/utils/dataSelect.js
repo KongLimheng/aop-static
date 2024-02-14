@@ -46,3 +46,53 @@ export const currency = [
     label: 'KHR',
   },
 ]
+
+export const cardTypes = [
+  { value: 'visa', label: 'Visa' },
+  { value: 'upi', label: 'UPI' },
+  { value: 'atm', label: 'ATM' },
+]
+
+export const typeOfCard = [
+  {
+    value: 'normal',
+    label: 'Normal',
+  },
+  {
+    value: 'vip',
+    label: 'VIP',
+  },
+]
+export const feeCharge = [
+  {
+    value: 'monthly',
+    label: 'Monthly',
+  },
+  {
+    value: 'yearly',
+    label: 'Yearly',
+  },
+  {
+    value: 'wave',
+    label: 'Wave',
+  },
+]
+
+export const maritalStatus = [
+  {
+    value: 'Single',
+    label: 'Single',
+  },
+  {
+    value: 'Divorced',
+    label: 'Divorced',
+  },
+  {
+    value: 'Separated',
+    label: 'Separated',
+  },
+  {
+    value: 'Widowed',
+    label: 'Widowed',
+  },
+]

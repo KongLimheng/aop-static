@@ -1,6 +1,6 @@
 import React from 'react'
 
-function OptionGroup({ register, label }) {
+function OptionGroup({ register, label, opt1, opt2 }) {
   return (
     <>
       <label htmlFor="" style={{ fontSize: 14, color: '#6a6a6a' }}>
@@ -9,21 +9,19 @@ function OptionGroup({ register, label }) {
       <div className="cnb-radio">
         <input
           {...register}
-          defaultValue="m"
+          defaultValue={opt1}
           defaultChecked
           // name="gender"
-          id="male"
           type="radio"
-          label="Male"
+          label={opt1}
           className="toggle-btn"
         />
         <input
           {...register}
-          defaultValue="f"
+          defaultValue={opt2}
           // name="gender"
-          id="female"
           type="radio"
-          label="Female"
+          label={opt2}
           className="toggle-btn"
         />
       </div>

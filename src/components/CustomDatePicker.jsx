@@ -19,7 +19,7 @@ const CustomDatePicker = ({ label, control, getValues, name }) => {
           top: 12,
           bottom: 0,
           left: 0,
-          zIndex: 10,
+          zIndex: 1,
           paddingLeft: 18,
         }}
       />

@@ -49,14 +49,26 @@ const CustomSelect = ({ label, control, icon, name, options = [] }) => {
             classNamePrefix="cnb-select"
             options={options}
             placeholder={label}
+            menuPortalTarget={document.body}
             components={{
               Control,
               ValueContainer: CustomValueContainer,
               IndicatorSeparator: false,
             }}
             styles={{
+              control: (base) => ({
+                ...base,
+                boxShadow: 'none',
+                border: 'none',
+                minHeight: 58,
+              }),
+              MenuPortal: (base) => ({
+                ...base,
+                zIndex: 999,
+              }),
               container: (provided, state) => {
                 return {
+                  ...provided,
                   flex: 1,
                 }
               },
@@ -72,22 +84,24 @@ const CustomSelect = ({ label, control, icon, name, options = [] }) => {
                     state.hasValue || state.selectProps.inputValue
                       ? 'white'
                       : 'transparent',
-                  transition: 'top 0.4s, font-size 0.1s',
+                  transition: '0.4s',
                   translate: `${
                     state.hasValue || state.selectProps.inputValue
-                      ? '-35px'
-                      : '-25px'
-                  } -0.5px`,
+                      ? '-25px 14px'
+                      : '-3px 7px'
+                  } `,
                   fontSize: 14,
                   scale:
                     state.hasValue || state.selectProps.inputValue
                       ? '0.87'
                       : '1',
-                  padding: `1px ${
+                  padding: `0 ${
                     state.hasValue || state.selectProps.inputValue
                       ? '15px'
                       : '23px'
                   }`,
+                  borderRadius: 3,
+                  gridArea: 'unset',
                 }
               },
 
@@ -96,6 +110,19 @@ const CustomSelect = ({ label, control, icon, name, options = [] }) => {
                   ...provided,
                   overflow: 'visible',
                   padding: '12px 20px',
+                }
+              },
+
+              option: (styles, { isDisabled, isFocused, isSelected }) => {
+                return {
+                  ...styles,
+                  background: isSelected
+                    ? 'var(--card-gradient-sm)'
+                    : isFocused
+                    ? '#B2D4FF'
+                    : 'transparent',
+                  color: isSelected ? '#fff' : '#000',
+                  cursor: isDisabled ? 'not-allowed' : 'default',
                 }
               },
             }}

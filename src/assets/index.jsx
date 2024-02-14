@@ -3,7 +3,10 @@ import AccountWhiteIcon from './icons/account-icon-white.svg'
 import AmendIcon from './icons/amend-icon.svg'
 import BackArrow from './icons/back-arrow.svg'
 import BankWhiteIcon from './icons/bank-white.svg'
+import BashIcon from './icons/bash.svg'
+import BranchIcon from './icons/branch.svg'
 import CalenderIcon from './icons/calendar.svg'
+import CreditCardIcon from './icons/credit-card.svg'
 import CrossBlackIcon from './icons/cross-black.svg'
 import CrossIcon from './icons/cross-icon.svg'
 import DigitalSignature from './icons/digital-signature.svg'
@@ -11,8 +14,10 @@ import EmailIcon from './icons/email.svg'
 import FolderIcon from './icons/folder.svg'
 import ForwardArrowWhiteIcon from './icons/forward-arr-white.svg'
 import ForwardArrow from './icons/forward-arrow.svg'
+import MinusIcon from './icons/minus.svg'
 import NationalityIcon from './icons/nationality.svg'
 import NidCardIcon from './icons/nid_card.svg'
+import NoteIcon from './icons/note-icon.svg'
 import PersonPlus from './icons/person-plus.svg'
 import PersonGradientIcon from './icons/person.svg'
 import PhoneIcon from './icons/phone.svg'
@@ -30,7 +35,10 @@ export {
   AmendIcon,
   BackArrow,
   BankWhiteIcon,
+  BashIcon,
+  BranchIcon,
   CalenderIcon,
+  CreditCardIcon,
   CrossBlackIcon,
   CrossIcon,
   DigitalSignature,
@@ -39,8 +47,10 @@ export {
   ForwardArrow,
   ForwardArrowWhiteIcon,
   Image93Png,
+  MinusIcon,
   NationalityIcon,
   NidCardIcon,
+  NoteIcon,
   PersonGradientIcon,
   PersonPlus,
   PhoneIcon,
