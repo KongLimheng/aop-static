@@ -6,6 +6,19 @@ export default defineConfig({
   base: './',
   plugins: [react(), splitVendorChunkPlugin()],
   build: {
+    // rollupOptions: {
+    //   output: {
+    //     manualChunks(id) {
+    //       if (
+    //         id.includes('@popperjs/core') ||
+    //         id.includes('react-bootstrap') ||
+    //         id.includes('bootstrap')
+    //       ) {
+    //         return 'bootstrap'
+    //       }
+    //     },
+    //   },
+    // },
     chunkSizeWarningLimit: 1024,
   },
 })
