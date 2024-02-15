@@ -3,7 +3,8 @@ import { useFieldArray, useForm } from 'react-hook-form'
 
 import { ErrorMessage } from '@hookform/error-message'
 import { joiResolver } from '@hookform/resolvers/joi'
-import { Button } from 'react-bootstrap'
+import 'react-calendar/dist/Calendar.css'
+import 'react-date-picker/dist/DatePicker.css'
 import { NavLink } from 'react-router-dom'
 import {
   BackArrow,
@@ -21,13 +22,19 @@ import {
   Profile,
   SecretParseIcon,
 } from '../assets'
+import { CalenderIcon } from '../assets/index'
 import CustomDatePicker from '../components/CustomDatePicker'
 import CustomInput from '../components/CustomInput'
 import CustomSelect from '../components/CustomSelect'
 import CustomSelectDouble from '../components/CustomSelectDouble'
 import CustomSwitch from '../components/CustomSwitch'
 import OptionGroup from '../components/OptionGroup'
-import { store } from '../contexts/store'
+import {
+  setIsMini,
+  setMaxWidth,
+  setModalData,
+  setOpenModal,
+} from '../contexts/store'
 import {
   accountType,
   cardTypes,
@@ -39,10 +46,20 @@ import {
 } from '../utils/dataSelect'
 import { AOPValidationSchema } from '../utils/validations'
 
+const CustomBody = () => {
+  return (
+    <div className="d-flex justify-content-center align-items-center flex-column">
+      <img src={CalenderIcon} alt="" width="152" />
+
+      <p className="mt-4 mb-0">
+        Incorrect field Customer DOB , Customer DOB are not
+      </p>
+      <p>allowed to open teen account</p>
+    </div>
+  )
+}
+
 const New = () => {
-  const setIsMini = store((state) => state.setIsMini)
-  const setMaxWidth = store((state) => state.setMaxWidth)
-  const setOpenModal = store((state) => state.setOpenModal)
   const [debitCardCheck, setDebitCardCheck] = useState(true)
   const [isJoinHolder, setIsJoinHolder] = useState(false)
 
@@ -53,6 +70,7 @@ const New = () => {
     formState: { errors },
     getValues,
     watch,
+    resetField,
   } = useForm({
     defaultValues: {
       fnameEn: 'a',
@@ -82,14 +100,45 @@ const New = () => {
     control,
     name: 'accountSetup',
   })
-  const { accountSetup: liveAccountSetup, joinHolderCheck } = watch()
+  const { accountSetup: liveAccountSetup, joinHolderCheck, dob } = watch()
   const hasWedding = liveAccountSetup.some((v) =>
     v.accountType.value.includes('Wedding Account')
   )
-  // useEffect(() => {
-  //   console.log(hasWedding)
-  //   setWeddingAccType(hasWedding)
-  // })
+
+  const hadTeenAcc = liveAccountSetup.some((v) =>
+    v.accountType.value.includes('Teen Account')
+  )
+
+  const handleTeenAccount = (dob) => {
+    if (!dob) return
+    const age = calculateAge(dob)
+    console.log(age)
+    if (age >= 18 && hadTeenAcc) {
+      setOpenModal(true)
+      resetField('dob')
+      setModalData({ modalBody: CustomBody() })
+    }
+  }
+
+  /**
+   *
+   * @param {Date} dob
+   * @returns
+   */
+  function calculateAge(dob) {
+    // const str_date = dateStr.split('/')
+    const today = new Date()
+    // var dob = new Date(`${str_date[2]}-${str_date[1]}-${str_date[0]}`)
+
+    let calAge =
+      today.getFullYear() -
+      dob.getFullYear() -
+      (today.getMonth() < dob.getMonth() ||
+        (today.getMonth() === dob.getMonth() &&
+          today.getDate() < dob.getDate()))
+
+    return calAge
+  }
 
   const submitHandler = (data) => {
     console.log(data)
@@ -98,7 +147,11 @@ const New = () => {
   useEffect(() => {
     setIsMini(false)
     setMaxWidth('100%')
-  }, [])
+  })
+
+  useEffect(() => {
+    handleTeenAccount(dob)
+  }, [dob])
 
   return (
     <>
@@ -170,7 +223,12 @@ const New = () => {
               </div>
               {/* gender */}
               <div className="col-12 col-md-6 p-2 mt-2">
-                <OptionGroup register={register('gender')} label={'Gender'} />
+                <OptionGroup
+                  register={register('gender')}
+                  label={'Gender'}
+                  opt1="Male"
+                  opt2={'Female'}
+                />
               </div>
 
               <div className="col-12 col-md-6 p-2 mt-2">
@@ -649,8 +707,6 @@ const New = () => {
             </div>
           </div>
           {/* button */}
-
-          <Button onClick={() => setOpenModal(true)}>A</Button>
           <div className="mt-5 mb-2 d-flex align-items-center justify-content-between">
             <NavLink
               style={{ textDecoration: 'none' }}

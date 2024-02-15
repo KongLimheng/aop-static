@@ -1,13 +1,9 @@
 import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { FolderIcon, Image93Png, ThreedotIcon } from '../assets'
-import { store } from '../contexts/store'
+import { setIsMini, setMaxWidth } from '../contexts/store'
 
 const Home = () => {
-  const setMaxWidth = store((state) => state.setMaxWidth)
-  const setMainFlex = store((state) => state.setMainFlex)
-  const setIsMini = store((state) => state.setIsMini)
-
   useEffect(() => {
     setMaxWidth('100%')
     setIsMini(false)

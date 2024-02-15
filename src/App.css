@@ -1277,6 +1277,9 @@ nav {
 }
 
 @media only screen and (max-width: 460px) {
+  body {
+    font-size: 10px;
+  }
   .canadia-logo {
     width: 40px;
   }
@@ -1300,6 +1303,9 @@ nav {
   }
   .file-upload-container .img-render-elm {
     width: calc(100% - 10px);
+  }
+  .inputbox {
+    height: 50px;
   }
 }
 

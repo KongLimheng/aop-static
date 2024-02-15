@@ -3,7 +3,6 @@ import { Controller } from 'react-hook-form'
 import Select, { components } from 'react-select'
 
 const Control = ({ children, ...props }) => {
-  console.log()
   return (
     <components.Control {...props}>
       <img
@@ -13,7 +12,6 @@ const Control = ({ children, ...props }) => {
           top: 23,
           bottom: 0,
           left: 0,
-          zIndex: 10,
           paddingLeft: 18,
         }}
       />
@@ -61,6 +59,9 @@ const CustomSelect = ({ label, control, icon, name, options = [] }) => {
                 boxShadow: 'none',
                 border: 'none',
                 minHeight: 58,
+                '@media only screen and (max-width: 460px)': {
+                  minHeight: 48,
+                },
               }),
               MenuPortal: (base) => ({
                 ...base,

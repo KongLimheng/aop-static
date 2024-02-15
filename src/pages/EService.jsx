@@ -12,7 +12,7 @@ import {
   PersonPlus,
 } from '../assets'
 import Card from '../components/CardFeature/Card'
-import { store } from '../contexts/store'
+import { setIsMini, setMaxWidth } from '../contexts/store'
 
 const EService = () => {
   const features = [
@@ -32,9 +32,6 @@ const EService = () => {
       background: true,
     },
   ]
-
-  const setMaxWidth = store((state) => state.setMaxWidth)
-  const setIsMini = store((state) => state.setIsMini)
 
   useEffect(() => {
     setMaxWidth('100%')

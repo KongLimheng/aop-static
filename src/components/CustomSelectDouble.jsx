@@ -138,6 +138,9 @@ const CustomSelectDouble = ({
                   borderBottomLeftRadius: 5,
                   minHeight: 58,
                   boxShadow: 'none',
+                  '@media only screen and (max-width: 460px)': {
+                    minHeight: 48,
+                  },
                 }),
               }}
             />
@@ -181,8 +184,11 @@ const CustomSelectDouble = ({
                     borderTopRightRadius: 5,
                     borderBottomRightRadius: 5,
                     border: 0,
-                    minHeight: 58,
                     boxShadow: 'none',
+                    minHeight: 58,
+                    '@media only screen and (max-width: 460px)': {
+                      minHeight: 48,
+                    },
                   }
                 },
                 valueContainer: (provided) => {
