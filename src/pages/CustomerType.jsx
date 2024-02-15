@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { BackArrow, CrossIcon, Profile } from '../assets'
-import { store } from '../contexts/store'
+import { setIsMini, setMaxWidth } from '../contexts/store'
 
 const CustomerType = () => {
-  const setMaxWidth = store((state) => state.setMaxWidth)
-  const setIsMini = store((state) => state.setIsMini)
+  // const setMaxWidth = store((state) => state.setMaxWidth)
+  // const setIsMini = store((state) => state.setIsMini)
 
   useEffect(() => {
     setMaxWidth('640px')

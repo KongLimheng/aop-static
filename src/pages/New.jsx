@@ -261,7 +261,7 @@ const New = () => {
               </div>
               <div className="col-12 col-md-6 p-2">
                 <div className="row">
-                  <div className="col-md-6 ">
+                  <div className="col-md-6 col-6">
                     <CustomDatePicker
                       label="Issue Date"
                       control={control}
@@ -269,7 +269,7 @@ const New = () => {
                       name="issueDate"
                     />
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-6 col-6">
                     <CustomDatePicker
                       label="Expire Date"
                       control={control}
