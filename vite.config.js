@@ -3,7 +3,7 @@ import { defineConfig, splitVendorChunkPlugin } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
+  // base: './',
   plugins: [react(), splitVendorChunkPlugin()],
   build: {
     // rollupOptions: {
@@ -19,6 +19,7 @@ export default defineConfig({
     //     },
     //   },
     // },
+
     chunkSizeWarningLimit: 1024,
   },
 })

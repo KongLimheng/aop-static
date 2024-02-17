@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {
   AccountCloseIcon,
   AccountWhiteIcon,
@@ -40,9 +40,9 @@ const EService = () => {
   return (
     <>
       <div>
-        <NavLink to="/">
+        <Link to="/">
           <img src={BackArrow} alt="" width="36" />
-        </NavLink>
+        </Link>
         <div className="pt-3 portal-title">E-Services</div>
       </div>
 
@@ -55,7 +55,7 @@ const EService = () => {
           <div className="col-12 col-lg-9">
             <div className="row g-2 mb-4">
               <div className="col">
-                <NavLink
+                <Link
                   to="/customer-type"
                   className="position-relative text-decoration-none"
                 >
@@ -100,7 +100,7 @@ const EService = () => {
                       />
                     </div>
                   </div>
-                </NavLink>
+                </Link>
               </div>
             </div>
             <div className="row g-3 g-lg-4 pt-3">

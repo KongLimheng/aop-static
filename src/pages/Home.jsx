@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { FolderIcon, Image93Png, ThreedotIcon } from '../assets'
 import { setIsMini, setMaxWidth } from '../contexts/store'
 
@@ -29,10 +29,7 @@ const Home = () => {
       <div className="container-fluid px-0">
         <div className="row g-2 g-md-3 mx-0">
           <div className="col-12 col-md-6">
-            <NavLink
-              className="text-black text-decoration-none"
-              to="/e-services"
-            >
+            <Link className="text-black text-decoration-none" to="/e-services">
               <div className="portal-box">
                 <div className="d-flex justify-content-between align-items-center">
                   <img src={FolderIcon} alt="" width={'31'} />
@@ -41,10 +38,10 @@ const Home = () => {
                 <div className="portal-title">E-Services</div>
                 <div className="portal-subtitle">3 items</div>
               </div>
-            </NavLink>
+            </Link>
           </div>
           <div className="col-12 col-md-6">
-            <NavLink className="text-black text-decoration-none" to="#">
+            <Link className="text-black text-decoration-none" to="#">
               <div className="portal-box">
                 <div className="d-flex justify-content-between align-items-center">
                   <img src={FolderIcon} alt="" width={'31'} />
@@ -53,7 +50,7 @@ const Home = () => {
                 <div className="portal-title">Central Hub</div>
                 <div className="portal-subtitle">3 items</div>
               </div>
-            </NavLink>
+            </Link>
           </div>
         </div>
       </div>

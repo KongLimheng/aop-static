@@ -5,7 +5,7 @@ import { ErrorMessage } from '@hookform/error-message'
 import { joiResolver } from '@hookform/resolvers/joi'
 import 'react-calendar/dist/Calendar.css'
 import 'react-date-picker/dist/DatePicker.css'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {
   BackArrow,
   BashIcon,
@@ -158,9 +158,9 @@ const New = () => {
       <div className="d-flex justify-content-between align-items-center">
         <div className="d-inline-flex">
           {/* Arrow Icon */}
-          <NavLink to="/e-services" className="me-4">
+          <Link to="/e-services" className="me-4">
             <img src={BackArrow} alt="back" width={40} />
-          </NavLink>
+          </Link>
           <div className="custom-text form-title">
             Review and Input <br />
             Information
@@ -708,13 +708,13 @@ const New = () => {
           </div>
           {/* button */}
           <div className="mt-5 mb-2 d-flex align-items-center justify-content-between">
-            <NavLink
+            <Link
               style={{ textDecoration: 'none' }}
               className="cnb-btn rounded-3 text-white"
               to="/customer-type"
             >
               Back Home
-            </NavLink>
+            </Link>
             <button
               style={{ textDecoration: 'none' }}
               className="cnb-btn rounded-3 text-white"
