@@ -27,8 +27,6 @@ import SecretParseIcon from './icons/secret-parse.svg'
 import ThreedotIcon from './icons/threedot.svg'
 import TickGradientIcon from './icons/tickGradientIcon.svg'
 
-import Image93Png from './images/image 93.png'
-
 export {
   AccountCloseIcon,
   AccountWhiteIcon,
@@ -46,7 +44,6 @@ export {
   FolderIcon,
   ForwardArrow,
   ForwardArrowWhiteIcon,
-  Image93Png,
   MinusIcon,
   NationalityIcon,
   NidCardIcon,

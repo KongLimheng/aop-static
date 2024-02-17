@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { FolderIcon, Image93Png, ThreedotIcon } from '../assets'
+import { FolderIcon, ThreedotIcon } from '../assets'
 import { setIsMini, setMaxWidth } from '../contexts/store'
 
 const Home = () => {
@@ -61,7 +61,7 @@ const Home = () => {
           <div className="col-12 col-md-8 col-xxl-4 image-box">
             <img
               className="object-fit-contain w-100 h-100"
-              src={Image93Png}
+              src="/images/image 93.png"
               alt=""
             />
           </div>
