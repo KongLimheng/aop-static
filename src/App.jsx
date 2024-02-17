@@ -8,32 +8,6 @@ import EService from './pages/EService'
 import Home from './pages/Home'
 import New from './pages/New'
 
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <Layout />,
-//     errorElement: <h1>Error</h1>,
-//     children: [
-//       {
-//         path: '/',
-//         element: <Home />,
-//       },
-//       {
-//         path: '/e-services',
-//         element: <EService />,
-//       },
-//       {
-//         path: '/customer-type',
-//         element: <CustomerType />,
-//       },
-//       {
-//         path: '/new',
-//         element: <New />,
-//       },
-//     ],
-//   },
-// ])
-
 function App() {
   return (
     <Router>
@@ -44,9 +18,8 @@ function App() {
           <Route path="/e-services" element={<EService />} />
           <Route path="/customer-type" element={<CustomerType />} />
           <Route path="/new" element={<New />} />
+          <Route path="*" element={<div>Error</div>} />
         </Route>
-
-        <Route path="*" element={<div>Error</div>} />
       </Routes>
       {/* </Layout> */}
     </Router>
