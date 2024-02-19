@@ -809,9 +809,9 @@ nav {
 }
 
 .switch svg {
-  -webkit-transition: var(--icon-transition);
-  -o-transition: var(--icon-transition);
-  transition: var(--icon-transition);
+  -webkit-transition: var(--icon-transition) !important;
+  -o-transition: var(--icon-transition) !important;
+  transition: var(--icon-transition) !important;
   position: absolute;
   height: auto;
 }
@@ -984,45 +984,6 @@ nav {
 
 .datepicker table tr td.active.active:hover {
   background: var(--card-gradient-sm);
-}
-
-.select2 {
-  border: none !important;
-}
-
-.accountTypeCur
-  ~ .select2.select2-container.select2-container--default
-  .select2-selection--single {
-  margin-left: 20px;
-}
-
-.select2-container--default .select2-selection--single {
-  border: none !important;
-  border-radius: 0px;
-  margin-left: 50px;
-}
-
-.select2-selection__arrow {
-  display: none;
-}
-
-.select2-container--open .select2-dropdown {
-  left: 50px;
-}
-
-.select2
-  .select2-container
-  .select2-container--default
-  .select2-container--below
-  .select2-container--open
-  .select2-container--focus {
-  width: 100%;
-}
-
-.select2-container .select2-selection--single .select2-selection__rendered {
-  padding-top: 2px;
-  padding-left: 0px;
-  width: 100%;
 }
 
 .wrap-table {
@@ -1305,7 +1266,8 @@ nav {
     width: calc(100% - 10px);
   }
   .inputbox {
-    height: 50px;
+    height: 52px;
+    font-size: 12px !important;
   }
 }
 
@@ -1351,4 +1313,13 @@ nav {
 
 .btn-close:focus {
   box-shadow: none;
+}
+
+.react-html5-camera-photo video {
+  width: 100% !important;
+  border-radius: 10px;
+}
+
+.react-html5-camera-photo > img {
+  width: 100% !important;
 }

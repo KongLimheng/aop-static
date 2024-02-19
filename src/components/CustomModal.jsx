@@ -9,7 +9,7 @@ import { Container, Modal } from 'react-bootstrap'
  */
 const CustomModal = ({ show, onHide, children, title }) => {
   return (
-    <Modal show={show} onHide={onHide} centered backdrop="static">
+    <Modal show={show} onHide={onHide} centered backdrop="static" size="lg">
       <Modal.Header
         closeButton
         style={{

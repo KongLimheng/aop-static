@@ -53,6 +53,7 @@ const CustomDatePicker = ({ label, control, getValues, name }) => {
             dateFormat="dd/MM/yyyy"
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
+            id="dob"
             renderCustomHeader={({
               date,
               changeYear,

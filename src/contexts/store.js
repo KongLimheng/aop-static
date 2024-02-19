@@ -8,7 +8,7 @@ export const store = create(
       isMini: false,
       formData: {},
       openModal: false,
-      flexiBg: '#fff',
+      flexiBg: '#ffffffb3',
       modalData: {
         modalTitle: '',
         modalBody: '',
@@ -22,6 +22,13 @@ export const store = create(
   )
 )
 
+/**
+ *
+ * @param {Object} data
+ * @param {String} data.modalTitle
+ * @param {JSX.Element | String} data.modalBody
+ * @returns
+ */
 export const setModalData = (data) => store.setState({ modalData: data })
 export const setOpenModal = (state) => store.setState({ openModal: state })
 export const setMaxWidth = (width) => store.setState({ maxWidth: width })

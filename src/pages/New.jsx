@@ -12,6 +12,7 @@ import {
   BranchIcon,
   CreditCardIcon,
   EmailIcon,
+  EmptyIcon,
   MinusIcon,
   NationalityIcon,
   NidCardIcon,
@@ -23,6 +24,7 @@ import {
   SecretParseIcon,
 } from '../assets'
 import { CalenderIcon } from '../assets/index'
+import CaptureComponent from '../components/CaptureComponent'
 import CustomDatePicker from '../components/CustomDatePicker'
 import CustomInput from '../components/CustomInput'
 import CustomSelect from '../components/CustomSelect'
@@ -158,7 +160,7 @@ const New = () => {
       <div className="d-flex justify-content-between align-items-center">
         <div className="d-inline-flex">
           {/* Arrow Icon */}
-          <Link to="/e-services" className="me-4">
+          <Link to="/customer-type" className="me-4">
             <img src={BackArrow} alt="back" width={40} />
           </Link>
           <div className="custom-text form-title">
@@ -549,141 +551,28 @@ const New = () => {
                   <hr style={{ flexGrow: 1 }} />
                 </div>
                 <div className="container-fluid mx-0">
-                  <div className="row g-3 px-0 px-0">
-                    {/* <CaptureImageSection /> */}
-                    <div className="col-12 col-md-4 px-0">
-                      {/* take a picture of NID/Passport section */}
-                      <div className="mx-2">
-                        <div style={{ fontSize: '11.5px' }}>
-                          Take A Picture of NID/Passport/Others
-                          <div
-                            className="d-inline-flex"
-                            style={{ color: '#921d1d' }}
-                          >
-                            *
-                          </div>
-                        </div>
-                        <label
-                          htmlFor="formFile"
-                          className="mt-2 d-flex flex-column justify-content-center align-items-center rounded-3"
-                          style={{
-                            padding: '40px 0',
-                            border: '1px dashed #797979',
-                          }}
-                        >
-                          <img
-                            src="../images/empty-img.svg"
-                            alt="empty-img"
-                            height={28}
-                          />
-                          <label
-                            className="pt-2 text-center"
-                            style={{ fontSize: 14, color: '#797979' }}
-                            htmlFor="formFile"
-                          >
-                            Please click here to take a
-                            <br />
-                            picture of NID/Passport/Others
-                          </label>
-                          <input
-                            className="form-control"
-                            type="file"
-                            id="formFile"
-                            accept=".png, .jpg, .jpeg"
-                            name="fileName"
-                            required=""
-                          />
-                        </label>
-                      </div>
-                    </div>
-                    <div className="col-12 col-md-4 px-0">
-                      {/* take a picture section */}
-                      <div className="mx-2">
-                        <div style={{ fontSize: '11.5px' }}>
-                          Take Photo
-                          <div
-                            className="d-inline-flex"
-                            style={{ color: '#921d1d' }}
-                          >
-                            *
-                          </div>
-                        </div>
-                        <label
-                          htmlFor="formFile"
-                          className="mt-2 d-flex flex-column justify-content-center align-items-center rounded-3"
-                          style={{
-                            padding: '40px 0',
-                            border: '1px dashed #797979',
-                          }}
-                        >
-                          <img
-                            src="../images/camera.svg"
-                            alt="camera"
-                            height={28}
-                          />
-                          <label
-                            className="pt-2 text-center"
-                            style={{ fontSize: 14, color: '#797979' }}
-                            htmlFor="formFile"
-                          >
-                            Please click here to <br />
-                            take photo
-                          </label>
-                          <input
-                            className="form-control"
-                            type="file"
-                            id="formFile"
-                            accept=".png, .jpg, .jpeg"
-                            name="fileName"
-                            required=""
-                          />
-                        </label>
-                      </div>
-                    </div>
-                    <div className="col-12 col-md-4 px-0">
-                      {/* take a picture section */}
-                      <div className="mx-2">
-                        <div style={{ fontSize: '11.5px' }}>
-                          Take A Picture of Signature
-                          <div
-                            className="d-inline-flex"
-                            style={{ color: '#921d1d' }}
-                          >
-                            *
-                          </div>
-                        </div>
-                        <label
-                          htmlFor="formFile"
-                          className="mt-2 d-flex flex-column justify-content-center align-items-center rounded-3"
-                          style={{
-                            padding: '40px 0',
-                            border: '1px dashed #797979',
-                          }}
-                        >
-                          <img
-                            src="../images/digital-signature.svg"
-                            alt="camera"
-                            height={28}
-                          />
-                          <label
-                            className="pt-2 text-center"
-                            style={{ fontSize: 14, color: '#797979' }}
-                            htmlFor="formFile"
-                          >
-                            Please click here to take a<br />
-                            picture of signature
-                          </label>
-                          <input
-                            className="form-control"
-                            type="file"
-                            id="formFile"
-                            accept=".png, .jpg, .jpeg"
-                            name="fileName"
-                            required=""
-                          />
-                        </label>
-                      </div>
-                    </div>
+                  {/* <CaptureImageSection /> */}
+                  <div className="row">
+                    <CaptureComponent
+                      label="Take A Picture of NID/Passport"
+                      placeholder="Please click here to take a picture of NID/Passport"
+                      icon={EmptyIcon}
+                      id="formFileNid"
+                    />
+
+                    <CaptureComponent
+                      label="Take Photo"
+                      placeholder="Please click here to take a picture of NID/Passport"
+                      icon={EmptyIcon}
+                      id="formFileTakePic"
+                    />
+                    <CaptureComponent
+                      label="Take A Picture of Signature"
+                      placeholder="Please click here to take a 
+                        picture of signature"
+                      icon={EmptyIcon}
+                      id="formFileSign"
+                    />
                   </div>
                 </div>
               </div>

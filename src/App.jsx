@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-datepicker/dist/react-datepicker.css'
+import 'react-html5-camera-photo/build/css/index.css'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import './App.css'
 import Layout from './components/Layout'

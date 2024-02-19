@@ -11,6 +11,7 @@ import CrossBlackIcon from './icons/cross-black.svg'
 import CrossIcon from './icons/cross-icon.svg'
 import DigitalSignature from './icons/digital-signature.svg'
 import EmailIcon from './icons/email.svg'
+import EmptyIcon from './icons/empty-img.svg'
 import FolderIcon from './icons/folder.svg'
 import ForwardArrowWhiteIcon from './icons/forward-arr-white.svg'
 import ForwardArrow from './icons/forward-arrow.svg'
@@ -41,6 +42,7 @@ export {
   CrossIcon,
   DigitalSignature,
   EmailIcon,
+  EmptyIcon,
   FolderIcon,
   ForwardArrow,
   ForwardArrowWhiteIcon,

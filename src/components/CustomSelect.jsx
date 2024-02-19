@@ -103,6 +103,9 @@ const CustomSelect = ({ label, control, icon, name, options = [] }) => {
                   }`,
                   borderRadius: 3,
                   gridArea: 'unset',
+                  '@media only screen and (max-width: 460px)': {
+                    fontSize: 10,
+                  },
                 }
               },
 

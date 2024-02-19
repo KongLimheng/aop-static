@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
-import { setOpenModal, store } from '../contexts/store'
+import { setFlexiBg, setOpenModal, store } from '../contexts/store'
 import CustomModal from './CustomModal'
 
 const Layout = () => {
@@ -8,6 +8,15 @@ const Layout = () => {
   const isMini = store((state) => state.isMini)
   const openModal = store((state) => state.openModal)
   const modalData = store((state) => state.modalData)
+  const flexiBg = store((state) => state.flexiBg)
+
+  useEffect(() => {
+    if (location.pathname === '/new') {
+      setFlexiBg('#fff')
+    } else {
+      setFlexiBg('#ffffffb3')
+    }
+  }, [location.pathname])
 
   return (
     <div
@@ -19,6 +28,7 @@ const Layout = () => {
         className={`wrap-container white-container `}
         style={{
           maxWidth: maxWidth,
+          background: flexiBg,
         }}
       >
         {/* {children} */}
