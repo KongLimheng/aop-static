@@ -54,6 +54,9 @@ const manifestForPlugIn = {
 export default defineConfig({
   // base: './',
   plugins: [react(), splitVendorChunkPlugin(), VitePWA(manifestForPlugIn)],
+  preview: {
+    port: 8024,
+  },
   build: {
     // rollupOptions: {
     //   output: {

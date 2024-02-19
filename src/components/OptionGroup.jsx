@@ -3,9 +3,7 @@ import React from 'react'
 function OptionGroup({ register, label, opt1, opt2 }) {
   return (
     <>
-      <label htmlFor="" style={{ fontSize: 14, color: '#6a6a6a' }}>
-        {label}
-      </label>
+      <span style={{ fontSize: 14, color: '#6a6a6a' }}>{label}</span>
       <div className="cnb-radio">
         <input
           {...register}

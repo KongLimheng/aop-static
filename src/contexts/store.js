@@ -15,6 +15,7 @@ export const store = create(
       },
     }),
     {
+      version: 1,
       name: 'aop-store',
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({ formData: state.formData }),

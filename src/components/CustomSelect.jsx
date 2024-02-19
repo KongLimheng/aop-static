@@ -42,6 +42,7 @@ const CustomSelect = ({ label, control, icon, name, options = [] }) => {
         render={({ field: { value, onChange } }) => (
           <Select
             icon={icon}
+            id={name}
             value={options.filter((n) => n.value === value)}
             onChange={(v) => onChange(v.value)}
             classNamePrefix="cnb-select"

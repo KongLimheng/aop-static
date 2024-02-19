@@ -8,6 +8,7 @@ import CustomerType from './pages/CustomerType'
 import EService from './pages/EService'
 import Home from './pages/Home'
 import New from './pages/New'
+import SuccessCreate from './pages/SuccessCreate'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/e-services" element={<EService />} />
           <Route path="/customer-type" element={<CustomerType />} />
+          <Route path="/success" element={<SuccessCreate />} />
           <Route path="/new" element={<New />} />
           <Route path="*" element={<div>Error</div>} />
         </Route>

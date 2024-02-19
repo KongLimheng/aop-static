@@ -5,12 +5,14 @@ import { ErrorMessage } from '@hookform/error-message'
 import { joiResolver } from '@hookform/resolvers/joi'
 import 'react-calendar/dist/Calendar.css'
 import 'react-date-picker/dist/DatePicker.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useRoutes } from 'react-router-dom'
 import {
   BackArrow,
   BashIcon,
   BranchIcon,
+  CameraIcon,
   CreditCardIcon,
+  DigitalSignature,
   EmailIcon,
   EmptyIcon,
   MinusIcon,
@@ -32,6 +34,7 @@ import CustomSelectDouble from '../components/CustomSelectDouble'
 import CustomSwitch from '../components/CustomSwitch'
 import OptionGroup from '../components/OptionGroup'
 import {
+  setFormData,
   setIsMini,
   setMaxWidth,
   setModalData,
@@ -62,8 +65,9 @@ const CustomBody = () => {
 }
 
 const New = () => {
-  const [debitCardCheck, setDebitCardCheck] = useState(true)
-  const [isJoinHolder, setIsJoinHolder] = useState(false)
+  const [debitCardCheck, setDebitCardCheck] = useState(false)
+  const navigate = useNavigate()
+  useRoutes
 
   const {
     handleSubmit,
@@ -74,22 +78,26 @@ const New = () => {
     watch,
     resetField,
   } = useForm({
+    mode: 'onChange',
     defaultValues: {
-      fnameEn: 'a',
+      fnameEn: '',
       // fnameKh: 'b',
-      lnameEn: 'c',
+      lnameEn: '',
       // lnameKh: 'c',
       // gender: 'd',
       // nationality: '',
       // legalDocType: '',
       // nidNumber: '',
       email: '',
+      dob: '',
       accountSetup: [
         {
           accountType: { value: 'Saving Account', label: 'Saving Account' },
           currency: { value: 'usd', label: 'USD' },
         },
       ],
+      joinHolderCheck: false,
+
       cardType: {
         card: { value: '', label: '' },
         type: { value: 'normal', label: 'Normal' },
@@ -102,7 +110,9 @@ const New = () => {
     control,
     name: 'accountSetup',
   })
-  const { accountSetup: liveAccountSetup, joinHolderCheck, dob } = watch()
+
+  const { accountSetup: liveAccountSetup, dob, joinHolderCheck } = watch()
+
   const hasWedding = liveAccountSetup.some((v) =>
     v.accountType.value.includes('Wedding Account')
   )
@@ -110,17 +120,17 @@ const New = () => {
   const hadTeenAcc = liveAccountSetup.some((v) =>
     v.accountType.value.includes('Teen Account')
   )
-
   const handleTeenAccount = (dob) => {
     if (!dob) return
     const age = calculateAge(dob)
-    console.log(age)
     if (age >= 18 && hadTeenAcc) {
       setOpenModal(true)
       resetField('dob')
       setModalData({ modalBody: CustomBody() })
     }
   }
+
+  console.log(errors)
 
   /**
    *
@@ -144,6 +154,8 @@ const New = () => {
 
   const submitHandler = (data) => {
     console.log(data)
+    setFormData(data)
+    navigate('/success')
   }
 
   useEffect(() => {
@@ -153,22 +165,31 @@ const New = () => {
 
   useEffect(() => {
     handleTeenAccount(dob)
-  }, [dob])
+    const { unsubscribe } = watch((value, { name, type }) => {
+      console.log(name)
+    })
+    return () => unsubscribe()
+  }, [dob, watch])
 
   return (
     <>
       <div className="d-flex justify-content-between align-items-center">
-        <div className="d-inline-flex">
+        <div className="d-inline-flex align-items-center ">
           {/* Arrow Icon */}
           <Link to="/customer-type" className="me-4">
-            <img src={BackArrow} alt="back" width={40} />
+            <img src={BackArrow} alt="back" className="back-arrow" />
           </Link>
           <div className="custom-text form-title">
             Review and Input <br />
             Information
           </div>
         </div>
-        <img className="canadia-logo" src="/cana-logo.png" alt="logo" />
+        <img
+          className="canadia-logo"
+          src="/cana-logo.png"
+          alt="logo"
+          loading="lazy"
+        />
       </div>
       <div className="divider mt-3" />
       {/* start customer form */}
@@ -406,7 +427,7 @@ const New = () => {
                 {/* switch join holder */}
                 <div className="col-12 px-0 mb-4">
                   <div className="d-flex align-items-center mt-4 mx-2">
-                    <CustomSwitch register={register('joinHolderCheck')} />
+                    <CustomSwitch control={control} name="joinHolderCheck" />
 
                     <span className="px-3 user-select-none">
                       Joint Holder Information
@@ -471,7 +492,6 @@ const New = () => {
                       type="checkbox"
                       id="checkDebitCard"
                       name="checkDebitCard"
-                      defaultChecked
                       onChange={() => setDebitCardCheck((prev) => !prev)}
                     />
                     <div className="checkmark" />
@@ -563,14 +583,14 @@ const New = () => {
                     <CaptureComponent
                       label="Take Photo"
                       placeholder="Please click here to take a picture of NID/Passport"
-                      icon={EmptyIcon}
+                      icon={CameraIcon}
                       id="formFileTakePic"
                     />
                     <CaptureComponent
                       label="Take A Picture of Signature"
                       placeholder="Please click here to take a 
                         picture of signature"
-                      icon={EmptyIcon}
+                      icon={DigitalSignature}
                       id="formFileSign"
                     />
                   </div>
@@ -614,6 +634,7 @@ const New = () => {
             </button>
           </div>
         </form>
+
         {/* end customer form */}
       </div>
     </>

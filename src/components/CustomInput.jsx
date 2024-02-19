@@ -5,7 +5,7 @@ const CustomInput = ({ register, label, icon, required = false }) => {
     <div className="inputbox">
       <img
         src={icon}
-        alt=""
+        alt={label}
         className="position-absolute"
         style={{
           height: 32,
@@ -15,6 +15,7 @@ const CustomInput = ({ register, label, icon, required = false }) => {
           left: 0,
           paddingLeft: 18,
         }}
+        loading="lazy"
       />
 
       <input
@@ -22,11 +23,12 @@ const CustomInput = ({ register, label, icon, required = false }) => {
         style={{ border: 'none' }}
         className="input"
         type="text"
-        id="firstName"
+        id={register.name}
         // name="firstName"
         required={required}
+        autoComplete="false"
       />
-      <label>
+      <label htmlFor={register.name}>
         {label}
         <div className="d-inline-flex" style={{ color: '#921d1d' }}>
           {required && '*'}

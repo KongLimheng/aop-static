@@ -1,13 +1,9 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { FolderIcon, ThreedotIcon } from '../assets'
-import { setIsMini, setMaxWidth } from '../contexts/store'
 
 const Home = () => {
-  useEffect(() => {
-    setMaxWidth('100%')
-    setIsMini(false)
-  })
+  useEffect(() => {})
 
   return (
     <>

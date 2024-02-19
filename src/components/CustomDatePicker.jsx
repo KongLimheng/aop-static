@@ -28,7 +28,7 @@ const CustomDatePicker = ({ label, control, getValues, name }) => {
     <div className="inputbox">
       <img
         src={CalenderIcon}
-        alt=""
+        alt={name}
         className="position-absolute"
         style={{
           height: 32,
@@ -53,7 +53,7 @@ const CustomDatePicker = ({ label, control, getValues, name }) => {
             dateFormat="dd/MM/yyyy"
             onFocus={() => setFocus(true)}
             onBlur={() => setFocus(false)}
-            id="dob"
+            id={name}
             renderCustomHeader={({
               date,
               changeYear,
@@ -131,7 +131,10 @@ const CustomDatePicker = ({ label, control, getValues, name }) => {
         )}
       />
 
-      <label className={`${(focus || hasDob) && 'flotingLabelDate'}`}>
+      <label
+        className={`${(focus || hasDob) && 'flotingLabelDate'}`}
+        htmlFor={name}
+      >
         {label}
         <div className="d-inline-flex" style={{ color: '#921d1d' }}>
           *

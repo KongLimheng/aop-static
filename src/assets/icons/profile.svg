@@ -7,10 +7,10 @@
             gradientTransform="translate(14.457 4.98849) rotate(16.2963) scale(14.7986 18.4924)">
             <stop stop-color="#121B67" />
             <stop offset="0.635422" stop-color="#ED4055" />
-            <stop offset="0.96845" stop-color="#EDD62C" />
-            <stop offset="0.96855" stop-color="#EDDA2B" />
-            <stop offset="0.96865" stop-color="#EDDE2A" />
-            <stop offset="0.96875" stop-color="#EDE229" />
+            <!-- <stop offset="0.96845" stop-color="#EDD62C" /> -->
+            <!-- <stop offset="0.96855" stop-color="#EDDA2B" /> -->
+            <!-- <stop offset="0.96865" stop-color="#EDDE2A" /> -->
+            <!-- <stop offset="0.96875" stop-color="#EDE229" /> -->
             <stop offset="0.9993" stop-color="#EDE927" />
             <stop offset="0.9994" stop-color="#EDEB27" />
             <stop offset="0.9995" stop-color="#EDEC26" />

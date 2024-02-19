@@ -115,8 +115,7 @@
   }
 
   .wrap-container {
-    padding: 40px 30px;
-    border-radius: 12px;
+    padding: 25px 20px !important;
   }
 
   .greeting-text {
@@ -175,12 +174,6 @@
   body {
     padding: 10px;
   }
-
-  .wrap-container {
-    padding: 25px 20px;
-    border-radius: 12px;
-  }
-
   .greeting-text {
     font-size: 18px;
     line-height: 26px;
@@ -199,11 +192,11 @@
 
 .wrap-container {
   width: 100%;
-  padding: 60px 40px;
+  padding: 35px;
 }
 
 .info-container {
-  padding: 0 5rem;
+  padding: 0 2rem;
 }
 
 /* screen home */
@@ -273,6 +266,7 @@ body {
   margin: 0;
   min-height: 100vh;
   padding: 0;
+  padding: 15px;
   font-family: 'Eina01-SemiBold', sans-serif;
   --text-gradient: linear-gradient(
     176deg,
@@ -449,7 +443,7 @@ body {
 .white-container {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(18.5px);
-  border-radius: 25px;
+  border-radius: 2vw;
   -webkit-backdrop-filter: blur(18.5px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
@@ -541,11 +535,11 @@ input:autofill {
 
 :is(.input:focus) ~ label,
 :is(.input:valid) ~ label {
-  translate: -40px -35.5px;
+  translate: -40px -33.5px;
   scale: 0.875;
   background: #fff;
   /* backdrop-filter: blur(18.6px); */
-  padding: 0 15px;
+  padding: 3px 15px;
   user-select: none;
 }
 
@@ -1177,6 +1171,9 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
   .vd-container {
     row-gap: 40px;
   }
@@ -1224,6 +1221,9 @@ nav {
 }
 
 @media only screen and (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
   /* .file-upload-container {
     height: 35vw;
   } */
@@ -1239,6 +1239,7 @@ nav {
 
 @media only screen and (max-width: 460px) {
   body {
+    padding: 15px 5px;
     font-size: 10px;
   }
   .canadia-logo {
@@ -1268,6 +1269,13 @@ nav {
   .inputbox {
     height: 52px;
     font-size: 12px !important;
+  }
+  .cnb-btn {
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+  .inputbox label {
+    font-size: 12px;
   }
 }
 
@@ -1322,4 +1330,14 @@ nav {
 
 .react-html5-camera-photo > img {
   width: 100% !important;
+}
+
+.back-arrow {
+  max-width: 40px;
+  width: calc(10px + 4vw);
+}
+
+.close-btn {
+  max-width: 28px;
+  width: calc(10px + 2vw);
 }

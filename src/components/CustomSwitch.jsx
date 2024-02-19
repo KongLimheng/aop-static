@@ -1,9 +1,22 @@
 import React from 'react'
+import { Controller } from 'react-hook-form'
 
-const CustomSwitch = ({ register }) => {
+const CustomSwitch = ({ control, name }) => {
   return (
-    <label className="switch">
-      <input type="checkbox" {...register} />
+    <label className="switch" htmlFor={name}>
+      <Controller
+        control={control}
+        name={name}
+        render={({ field: { value, onChange } }) => (
+          <input
+            type="checkbox"
+            id={name}
+            onChange={(v) => onChange(v)}
+            value={value}
+          />
+        )}
+      />
+
       <div className="slider">
         <div className="circle">
           <svg

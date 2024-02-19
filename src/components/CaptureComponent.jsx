@@ -51,6 +51,7 @@ const CaptureComponent = ({ label, placeholder, icon, id }) => {
           onClick={handleCapture}
           className="mt-2 rounded-3 d-flex flex-column justify-content-center align-items-center overflow-hidden file-upload-container position-relative"
           data-id={id}
+          htmlFor={id}
         >
           {dataImage ? (
             <img
@@ -62,7 +63,14 @@ const CaptureComponent = ({ label, placeholder, icon, id }) => {
             />
           ) : (
             <>
-              <img src={icon} alt="empty-img" height={28} />
+              <img
+                loading="lazy"
+                src={icon}
+                alt="empty-img"
+                style={{
+                  width: '15%',
+                }}
+              />
               <span
                 className="pt-2 text-center px-4 "
                 style={{ fontSize: 14, color: '#797979' }}

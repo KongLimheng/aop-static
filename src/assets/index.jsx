@@ -6,6 +6,7 @@ import BankWhiteIcon from './icons/bank-white.svg'
 import BashIcon from './icons/bash.svg'
 import BranchIcon from './icons/branch.svg'
 import CalenderIcon from './icons/calendar.svg'
+import CameraIcon from './icons/camera.svg'
 import CreditCardIcon from './icons/credit-card.svg'
 import CrossBlackIcon from './icons/cross-black.svg'
 import CrossIcon from './icons/cross-icon.svg'
@@ -37,6 +38,7 @@ export {
   BashIcon,
   BranchIcon,
   CalenderIcon,
+  CameraIcon,
   CreditCardIcon,
   CrossBlackIcon,
   CrossIcon,
