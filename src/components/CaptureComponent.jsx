@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Col } from 'react-bootstrap'
-import Camera, { IMAGE_TYPES } from 'react-html5-camera-photo'
+import Camera, { FACING_MODES, IMAGE_TYPES } from 'react-html5-camera-photo'
 import { setModalData, setOpenModal } from '../contexts/store'
 
 const Body = ({ setDataImage }) => {
@@ -11,6 +11,7 @@ const Body = ({ setDataImage }) => {
   return (
     <>
       <Camera
+        idealFacingMode={FACING_MODES.ENVIRONMENT}
         imageType={IMAGE_TYPES.JPG}
         idealResolution={{
           width: 640,
@@ -18,9 +19,6 @@ const Body = ({ setDataImage }) => {
         }}
         onTakePhoto={(dataUri) => {
           handleTakePhoto(dataUri)
-        }}
-        onCameraStop={(e) => {
-          console.log('handleCameraStop', '=')
         }}
       />
     </>
