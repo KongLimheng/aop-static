@@ -11,7 +11,7 @@ const Body = ({ setDataImage }) => {
   return (
     <>
       <Camera
-        idealFacingMode={FACING_MODES.ENVIRONMENT}
+        idealFacingMode={FACING_MODES.USER}
         imageType={IMAGE_TYPES.JPG}
         idealResolution={{
           width: 640,
