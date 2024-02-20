@@ -5,7 +5,7 @@ const manifestForPlugIn = {
   registerType: 'autoUpdate',
   // strategies: 'injectManifest',
   // srcDir: '/',
-  includeAssests: ['assets/*'],
+  includeAssests: ['./assets/*'],
   manifest: {
     name: 'Account Opening Portal',
     short_name: 'aop-static',
@@ -21,13 +21,19 @@ const manifestForPlugIn = {
         src: '/cana-logo-192x192.png',
         sizes: '192x192',
         type: 'image/png',
-        purpose: 'favicon',
+        purpose: 'any',
       },
       {
-        src: '/cana-logo.png',
+        src: '/cana-logo-196x196.png',
+        sizes: '196x196',
+        type: 'image/png',
+        purpose: 'any maskable',
+      },
+      {
+        src: '/cana-logo-512x512.png',
         sizes: '512x512',
         type: 'image/png',
-        purpose: 'favicon',
+        purpose: 'any',
       },
       // {
       //   src: '/apple-touch-icon.png',
@@ -35,24 +41,18 @@ const manifestForPlugIn = {
       //   type: 'image/png',
       //   purpose: 'apple touch icon',
       // },
-      {
-        src: '/cana-logo.png',
-        sizes: '196x196',
-        type: 'image/png',
-        purpose: 'maskable',
-      },
     ],
     theme_color: '#ffffffb3',
     background_color: '#f0e7db',
     display: 'standalone',
     scope: '/',
-    start_url: 'index.html',
+    start_url: '/',
     orientation: 'portrait',
   },
 }
 // https://vitejs.dev/config/
 export default defineConfig({
-  // base: './',
+  base: './',
   plugins: [react(), splitVendorChunkPlugin(), VitePWA(manifestForPlugIn)],
   preview: {
     port: 8024,
