@@ -184,12 +184,14 @@ const New = () => {
             Information
           </div>
         </div>
-        <img
-          className="canadia-logo"
-          src="/cana-logo.png"
-          alt="logo"
-          loading="lazy"
-        />
+        <Link to="/">
+          <img
+            className="canadia-logo"
+            src="/cana-logo.png"
+            alt="logo"
+            loading="lazy"
+          />
+        </Link>
       </div>
       <div className="divider mt-3" />
       {/* start customer form */}
@@ -343,8 +345,8 @@ const New = () => {
               {fields.map((item, idx) => {
                 const count = fields.length
                 return (
-                  <div className="row" key={item.id}>
-                    <div className="col-10 col-sm-11 p-2 mt-3">
+                  <div className="row mt-3 " key={item.id}>
+                    <div className="col-10 col-sm-10">
                       <CustomSelectDouble
                         label="Account Type"
                         name={`accountSetup[${idx}]`}
@@ -357,14 +359,19 @@ const New = () => {
                     </div>
                     {idx > 0 ? (
                       <div
-                        className="col-2 col-sm-1 p-2 mt-3 d-flex justify-content-end user-select-auto"
+                        className="col-2 col-sm-2 py-2 d-flex justify-content-end user-select-auto"
                         onClick={() => remove(idx)}
                       >
-                        <img src={MinusIcon} alt="minus" width="30" />
+                        <img
+                          src={MinusIcon}
+                          alt="minus"
+                          className="w-100 "
+                          style={{ maxWidth: 30 }}
+                        />
                       </div>
                     ) : (
                       <button
-                        className="col-2 col-sm-1 p-2 mt-3 d-flex justify-content-end bg-transparent align-items-center"
+                        className="col-2 col-sm-2 py-2 d-flex justify-content-end bg-transparent align-items-center"
                         style={{
                           border: 'none',
                         }}
@@ -381,8 +388,8 @@ const New = () => {
                           src={PlusIcon}
                           id="add-acc"
                           alt="plus"
-                          width={30}
-                          // style={{ marginTop: 10, cursor: 'pointer' }}
+                          className="w-100 "
+                          style={{ maxWidth: 30 }}
                         />
                       </button>
                     )}

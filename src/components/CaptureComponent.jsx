@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Col } from 'react-bootstrap'
-import Camera, { FACING_MODES, IMAGE_TYPES } from 'react-html5-camera-photo'
+import Camera, { IMAGE_TYPES } from 'react-html5-camera-photo'
 import { setModalData, setOpenModal } from '../contexts/store'
 
-const Body = ({ setDataImage }) => {
+const Body = ({ setDataImage, facingMode }) => {
   const handleTakePhoto = (dataUri) => {
     setDataImage(dataUri)
     setOpenModal(false)
@@ -11,7 +11,7 @@ const Body = ({ setDataImage }) => {
   return (
     <>
       <Camera
-        idealFacingMode={FACING_MODES.USER}
+        idealFacingMode={facingMode}
         imageType={IMAGE_TYPES.JPG}
         idealResolution={{
           width: 640,
@@ -27,6 +27,7 @@ const Body = ({ setDataImage }) => {
 
 const CaptureComponent = ({ label, placeholder, icon, id }) => {
   const [dataImage, setDataImage] = useState(null)
+  const [facingMode, setFacingMode] = useState('environment')
   /**
    *
    * @param {MouseEvent} e
@@ -34,7 +35,7 @@ const CaptureComponent = ({ label, placeholder, icon, id }) => {
   const handleCapture = (e) => {
     setOpenModal(true)
     setModalData({
-      modalBody: <Body setDataImage={setDataImage} />,
+      modalBody: <Body setDataImage={setDataImage} facingMode={facingMode} />,
     })
   }
 
@@ -51,7 +52,6 @@ const CaptureComponent = ({ label, placeholder, icon, id }) => {
           onClick={handleCapture}
           className="mt-2 rounded-3 d-flex flex-column justify-content-center align-items-center overflow-hidden file-upload-container position-relative"
           data-id={id}
-          htmlFor={id}
         >
           {dataImage ? (
             <img

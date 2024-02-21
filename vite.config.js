@@ -7,7 +7,7 @@ const manifestForPlugIn = {
   includeAssets: ['**/*', 'favicon.ico'],
   manifest: {
     name: 'Account Opening Portal',
-    short_name: 'aop-static',
+    short_name: 'COE Static',
     description: 'Account Opening Portal',
     icons: [
       {
@@ -37,7 +37,7 @@ const manifestForPlugIn = {
     display: 'standalone',
     scope: '/',
     start_url: '/',
-    orientation: 'portrait',
+    orientation: 'any',
   },
 }
 // https://vitejs.dev/config/
@@ -48,20 +48,6 @@ export default defineConfig({
     port: 8024,
   },
   build: {
-    // rollupOptions: {
-    //   output: {
-    //     manualChunks(id) {
-    //       if (
-    //         id.includes('@popperjs/core') ||
-    //         id.includes('react-bootstrap') ||
-    //         id.includes('bootstrap')
-    //       ) {
-    //         return 'bootstrap'
-    //       }
-    //     },
-    //   },
-    // },
-
     chunkSizeWarningLimit: 1024,
   },
 })

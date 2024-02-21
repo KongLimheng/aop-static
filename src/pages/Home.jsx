@@ -1,16 +1,27 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { FolderIcon, ThreedotIcon } from '../assets'
 
 const Home = () => {
-  useEffect(() => {})
-
   return (
     <>
       <div className="d-flex align-items-start justify-content-between">
         <div>
           <div className="greeting-text">
-            <span className="custom-text">Hi Pisey,</span> 👋
+            <span
+              className="custom-text"
+              onClick={() =>
+                alert(
+                  JSON.stringify({
+                    innerHeight,
+                    innerWidth,
+                  })
+                )
+              }
+            >
+              Hi Pisey,
+            </span>{' '}
+            👋
           </div>
           <div className="welcome-text">Welcome back to your workspace</div>
         </div>
