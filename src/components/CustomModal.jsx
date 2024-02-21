@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import { Container, Modal } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 
 /**
  *
@@ -18,8 +18,8 @@ const CustomModal = ({ show, onHide, children, title }) => {
       >
         <Modal.Title id="contained-modal-title-center">{title}</Modal.Title>
       </Modal.Header>
-      <Modal.Body className="grid-example">
-        <Container>{children}</Container>
+      <Modal.Body>
+        <div>{children}</div>
       </Modal.Body>
     </Modal>
   )

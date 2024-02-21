@@ -4,6 +4,7 @@ import 'react-html5-camera-photo/build/css/index.css'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import './App.css'
 import Layout from './components/Layout'
+import PrivateRoute from './components/PrivateRoute'
 import CustomerType from './pages/CustomerType'
 import EService from './pages/EService'
 import Home from './pages/Home'
@@ -14,19 +15,21 @@ import SuccessCreate from './pages/SuccessCreate'
 function App() {
   return (
     <Router>
-      {/* <Layout> */}
-      <Routes>
-        <Route path="/" element={<Layout />}>
+      <Layout>
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/e-services" element={<EService />} />
           <Route path="/customer-type" element={<CustomerType />} />
-          <Route path="/success" element={<SuccessCreate />} />
           <Route path="/new" element={<New />} />
+
+          <Route path="/success" element={<PrivateRoute />}>
+            <Route path="/success" element={<SuccessCreate />} />
+          </Route>
+
           <Route path="/quick-transfer" element={<QuickTransfer />} />
           <Route path="*" element={<div>Error</div>} />
-        </Route>
-      </Routes>
-      {/* </Layout> */}
+        </Routes>
+      </Layout>
     </Router>
   )
 }

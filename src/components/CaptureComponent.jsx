@@ -9,19 +9,17 @@ const Body = ({ setDataImage, facingMode }) => {
     setOpenModal(false)
   }
   return (
-    <>
-      <Camera
-        idealFacingMode={facingMode}
-        imageType={IMAGE_TYPES.JPG}
-        idealResolution={{
-          width: 640,
-          height: 480,
-        }}
-        onTakePhoto={(dataUri) => {
-          handleTakePhoto(dataUri)
-        }}
-      />
-    </>
+    <Camera
+      idealFacingMode={facingMode}
+      imageType={IMAGE_TYPES.JPG}
+      idealResolution={{
+        width: 640,
+        height: 480,
+      }}
+      onTakePhoto={(dataUri) => {
+        handleTakePhoto(dataUri)
+      }}
+    />
   )
 }
 

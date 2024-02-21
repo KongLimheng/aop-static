@@ -4,8 +4,8 @@ import { store } from '../contexts/store'
 import { getRandomAccount, getSymbol } from '../utils'
 
 const SuccessCreate = () => {
-  const formData = store((state) => state.formData)
-  console.log(formData.accountSetup)
+  const { fnameEn, lnameEn, accountSetup } = store((state) => state.formData)
+  console.log(accountSetup)
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center gap-2">
@@ -27,33 +27,31 @@ const SuccessCreate = () => {
             Account Name:
           </Col>
           <Col md="6" className="text-end ">
-            {formData.fnameEn} {formData.lnameEn}
+            {fnameEn} {lnameEn}
           </Col>
         </Row>
-        {formData.accountSetup.map(
-          ({ accountNumber, accountType, currency }) => (
-            <Row key={accountNumber} className="row-gap-3 pt-3 ">
-              <Col md="6" className="">
-                Account Number:
-              </Col>
-              <Col md="6" className="text-end ">
-                {accountNumber}
-              </Col>
-              <Col md="6" className="">
-                Account Type:
-              </Col>
-              <Col md="6" className="text-end ">
-                {accountType.value}
-              </Col>
-              <Col md="6" className="">
-                Account Currency:
-              </Col>
-              <Col md="6" className="text-end ">
-                {currency.label} ({getSymbol(currency.label)})
-              </Col>
-            </Row>
-          )
-        )}
+        {accountSetup?.map(({ accountNumber, accountType, currency }) => (
+          <Row key={accountNumber} className="row-gap-3 pt-3 ">
+            <Col md="6" className="">
+              Account Number:
+            </Col>
+            <Col md="6" className="text-end ">
+              {accountNumber}
+            </Col>
+            <Col md="6" className="">
+              Account Type:
+            </Col>
+            <Col md="6" className="text-end ">
+              {accountType.value}
+            </Col>
+            <Col md="6" className="">
+              Account Currency:
+            </Col>
+            <Col md="6" className="text-end ">
+              {currency.label} ({getSymbol(currency.label)})
+            </Col>
+          </Row>
+        ))}
       </div>
       <a href="/quick-transfer" className="cnb-btn rounded-3 align-self-end">
         KHQR Transfer

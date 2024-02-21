@@ -262,7 +262,7 @@ const QuickTransfer = () => {
               <img src={KHQRIcon} alt="khqr" width={80} />
             </div>
             <div>
-              <h5 className="qr-name px-4">
+              <h5 className="qr-name px-4 fs-2 ">
                 {fnameEn} {lnameEn}
               </h5>
               <h1 className="px-4">

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
 import {
   setFlexiBg,
   setIsMini,
@@ -9,14 +8,18 @@ import {
 } from '../contexts/store'
 import CustomModal from './CustomModal'
 
-const Layout = () => {
+/**
+ *
+ * @param {Object} param
+ * @param {JSX.Element} param.children
+ * @returns
+ */
+const Layout = ({ children }) => {
   const maxWidth = store((state) => state.maxWidth)
   const isMini = store((state) => state.isMini)
   const openModal = store((state) => state.openModal)
   const modalData = store((state) => state.modalData)
   const flexiBg = store((state) => state.flexiBg)
-  const formData = store((state) => state.formData)
-  const navigate = useNavigate()
   const mainPath = ['/', '/e-services', '/new']
 
   useEffect(() => {
@@ -33,19 +36,12 @@ const Layout = () => {
       setMaxWidth('640px')
       setIsMini(true)
     }
-
-    if (
-      location.pathname === '/success' &&
-      Object.keys(formData).length === 0
-    ) {
-      navigate('/new')
-    }
   }, [location.pathname])
 
   return (
     <div
       className={`w-100 justify-content-center align-items-center ${
-        isMini && 'd-flex '
+        isMini && 'd-flex'
       }`}
     >
       <div
@@ -56,8 +52,8 @@ const Layout = () => {
           minWidth: 290,
         }}
       >
-        {/* {children} */}
-        <Outlet />
+        {children}
+
         <CustomModal
           title={modalData.modalTitle}
           show={openModal}
