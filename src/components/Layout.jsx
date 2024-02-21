@@ -44,7 +44,7 @@ const Layout = () => {
 
   return (
     <div
-      className={`w-100  justify-content-center align-items-center ${
+      className={`w-100 justify-content-center align-items-center ${
         isMini && 'd-flex '
       }`}
     >

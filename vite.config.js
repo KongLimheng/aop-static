@@ -2,48 +2,38 @@ import react from '@vitejs/plugin-react'
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 const manifestForPlugIn = {
+  mode: 'production',
   registerType: 'autoUpdate',
-  // strategies: 'injectManifest',
-  // srcDir: '/',
-  includeAssests: ['./assets/*'],
+  includeAssets: ['**/*', 'favicon.ico'],
   manifest: {
     name: 'Account Opening Portal',
     short_name: 'aop-static',
     description: 'Account Opening Portal',
     icons: [
       {
-        src: '/cana-logo-144x144.png',
-        sizes: '144x144',
+        src: 'pwa-64x64.png',
+        sizes: '64x64',
         type: 'image/png',
-        purpose: 'any',
       },
       {
-        src: '/cana-logo-192x192.png',
+        src: 'pwa-192x192.png',
         sizes: '192x192',
         type: 'image/png',
-        purpose: 'any',
       },
       {
-        src: '/cana-logo-196x196.png',
-        sizes: '196x196',
-        type: 'image/png',
-        purpose: 'any maskable',
-      },
-      {
-        src: '/cana-logo-512x512.png',
+        src: 'pwa-512x512.png',
         sizes: '512x512',
         type: 'image/png',
-        purpose: 'any',
       },
-      // {
-      //   src: '/apple-touch-icon.png',
-      //   sizes: '180x180',
-      //   type: 'image/png',
-      //   purpose: 'apple touch icon',
-      // },
+      {
+        src: 'maskable-icon-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+        purpose: 'maskable',
+      },
     ],
     theme_color: '#ffffffb3',
-    background_color: '#f0e7db',
+    background_color: '#fff',
     display: 'standalone',
     scope: '/',
     start_url: '/',

@@ -110,7 +110,7 @@
     margin-top: 5px;
   }
 
-  body {
+  #root {
     padding: 20px;
   }
 
@@ -171,7 +171,7 @@
 }
 
 @media screen and (max-width: 450px) {
-  body {
+  #root {
     padding: 10px;
   }
   .greeting-text {
@@ -266,7 +266,6 @@ body {
   margin: 0;
   min-height: 100vh;
   padding: 0;
-  padding: 15px;
   font-family: 'Eina01-SemiBold', sans-serif;
   --text-gradient: linear-gradient(
     176deg,
@@ -1171,8 +1170,8 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
-  body {
-    padding: 10px;
+  #root {
+    padding: 10px !important;
   }
   .vd-container {
     row-gap: 40px;
@@ -1221,12 +1220,6 @@ nav {
 }
 
 @media only screen and (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
-  /* .file-upload-container {
-    height: 35vw;
-  } */
   .modal-custom {
     width: 95%;
   }
@@ -1238,8 +1231,8 @@ nav {
 }
 
 @media only screen and (max-width: 460px) {
-  body {
-    padding: 15px 5px;
+  #root {
+    padding: 15px 5px !important;
     font-size: 10px;
   }
   .canadia-logo {
