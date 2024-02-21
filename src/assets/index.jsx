@@ -1,3 +1,4 @@
+import KHQRIcon from './icons/KHQR-Logo.png'
 import AccountCloseIcon from './icons/account-close.svg'
 import AccountWhiteIcon from './icons/account-icon-white.svg'
 import AmendIcon from './icons/amend-icon.svg'
@@ -7,10 +8,12 @@ import BashIcon from './icons/bash.svg'
 import BranchIcon from './icons/branch.svg'
 import CalenderIcon from './icons/calendar.svg'
 import CameraIcon from './icons/camera.svg'
+import CashIcon from './icons/cash-icon.svg'
 import CreditCardIcon from './icons/credit-card.svg'
 import CrossBlackIcon from './icons/cross-black.svg'
 import CrossIcon from './icons/cross-icon.svg'
 import DigitalSignature from './icons/digital-signature.svg'
+import DownloadIcon from './icons/download-icon.svg'
 import EmailIcon from './icons/email.svg'
 import EmptyIcon from './icons/empty-img.svg'
 import FolderIcon from './icons/folder.svg'
@@ -39,15 +42,18 @@ export {
   BranchIcon,
   CalenderIcon,
   CameraIcon,
+  CashIcon,
   CreditCardIcon,
   CrossBlackIcon,
   CrossIcon,
   DigitalSignature,
+  DownloadIcon,
   EmailIcon,
   EmptyIcon,
   FolderIcon,
   ForwardArrow,
   ForwardArrowWhiteIcon,
+  KHQRIcon,
   MinusIcon,
   NationalityIcon,
   NidCardIcon,

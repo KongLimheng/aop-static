@@ -8,6 +8,7 @@ import CustomerType from './pages/CustomerType'
 import EService from './pages/EService'
 import Home from './pages/Home'
 import New from './pages/New'
+import QuickTransfer from './pages/QuickTransfer'
 import SuccessCreate from './pages/SuccessCreate'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/customer-type" element={<CustomerType />} />
           <Route path="/success" element={<SuccessCreate />} />
           <Route path="/new" element={<New />} />
+          <Route path="/quick-transfer" element={<QuickTransfer />} />
           <Route path="*" element={<div>Error</div>} />
         </Route>
       </Routes>

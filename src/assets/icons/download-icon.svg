@@ -1,0 +1,30 @@
+<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<circle cx="17" cy="17" r="17" fill="url(#paint0_linear_213_169)" fill-opacity="0.19" />
+	<path
+		d="M11 20V20.75C11 21.3467 11.2371 21.919 11.659 22.341C12.081 22.7629 12.6533 23 13.25 23H20.75C21.3467 23 21.919 22.7629 22.341 22.341C22.7629 21.919 23 21.3467 23 20.75V20M20 17L17 20M17 20L14 17M17 20V11"
+		stroke="#940000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+	<defs>
+		<linearGradient id="paint0_linear_213_169" x1="0" y1="0" x2="47.4891" y2="29.7275" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#121B67" />
+			<stop offset="0.554587" stop-color="#ED4055" />
+			<stop offset="0.96845" stop-color="#EDD62C" />
+			<stop offset="0.96855" stop-color="#EDDA2B" />
+			<stop offset="0.96865" stop-color="#EDDE2A" />
+			<stop offset="0.96875" stop-color="#EDE229" />
+			<stop offset="0.9992" stop-color="#615E11" />
+			<stop offset="0.9993" stop-color="#EDE927" />
+			<stop offset="0.9994" stop-color="#EDEB27" />
+			<stop offset="0.9995" stop-color="#EDEC26" />
+			<stop offset="0.9996" stop-color="#EDEE26" />
+			<stop offset="0.9997" stop-color="#EDF224" />
+			<stop offset="0.9998" stop-color="#EDF623" />
+			<stop offset="0.9999" stop-color="#EDFB22" />
+			<stop offset="1" stop-color="#EDFF21" />
+			<stop offset="1" stop-color="#EDFF21" />
+			<stop offset="1" stop-color="#EDFF21" />
+			<stop offset="1" stop-color="#EDFF21" />
+			<stop offset="1" stop-color="#EDFF21" />
+			<stop offset="1" stop-color="#EDFF21" />
+		</linearGradient>
+	</defs>
+</svg>

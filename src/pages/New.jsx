@@ -3,9 +3,10 @@ import { useFieldArray, useForm } from 'react-hook-form'
 
 import { ErrorMessage } from '@hookform/error-message'
 import { joiResolver } from '@hookform/resolvers/joi'
+import { Spinner } from 'react-bootstrap'
 import 'react-calendar/dist/Calendar.css'
 import 'react-date-picker/dist/DatePicker.css'
-import { Link, useNavigate, useRoutes } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import {
   BackArrow,
   BashIcon,
@@ -33,13 +34,8 @@ import CustomSelect from '../components/CustomSelect'
 import CustomSelectDouble from '../components/CustomSelectDouble'
 import CustomSwitch from '../components/CustomSwitch'
 import OptionGroup from '../components/OptionGroup'
-import {
-  setFormData,
-  setIsMini,
-  setMaxWidth,
-  setModalData,
-  setOpenModal,
-} from '../contexts/store'
+import { setFormData, setModalData, setOpenModal } from '../contexts/store'
+import { calculateAge, getRandomAccount } from '../utils'
 import {
   accountType,
   cardTypes,
@@ -67,7 +63,7 @@ const CustomBody = () => {
 const New = () => {
   const [debitCardCheck, setDebitCardCheck] = useState(false)
   const navigate = useNavigate()
-  useRoutes
+  const [isLoading, setIsLoading] = useState(false)
 
   const {
     handleSubmit,
@@ -89,7 +85,7 @@ const New = () => {
       // legalDocType: '',
       // nidNumber: '',
       email: '',
-      dob: '',
+      // dob: '',
       accountSetup: [
         {
           accountType: { value: 'Saving Account', label: 'Saving Account' },
@@ -110,13 +106,11 @@ const New = () => {
     control,
     name: 'accountSetup',
   })
-
   const { accountSetup: liveAccountSetup, dob, joinHolderCheck } = watch()
 
   const hasWedding = liveAccountSetup.some((v) =>
     v.accountType.value.includes('Wedding Account')
   )
-
   const hadTeenAcc = liveAccountSetup.some((v) =>
     v.accountType.value.includes('Teen Account')
   )
@@ -131,37 +125,19 @@ const New = () => {
   }
 
   console.log(errors)
-
-  /**
-   *
-   * @param {Date} dob
-   * @returns
-   */
-  function calculateAge(dob) {
-    // const str_date = dateStr.split('/')
-    const today = new Date()
-    // var dob = new Date(`${str_date[2]}-${str_date[1]}-${str_date[0]}`)
-
-    let calAge =
-      today.getFullYear() -
-      dob.getFullYear() -
-      (today.getMonth() < dob.getMonth() ||
-        (today.getMonth() === dob.getMonth() &&
-          today.getDate() < dob.getDate()))
-
-    return calAge
-  }
-
   const submitHandler = (data) => {
+    setIsLoading(true)
+    liveAccountSetup.forEach((acc) => {
+      acc.accountNumber = getRandomAccount(13)
+    })
     console.log(data)
-    setFormData(data)
-    navigate('/success')
-  }
 
-  useEffect(() => {
-    setIsMini(false)
-    setMaxWidth('100%')
-  })
+    setFormData(data)
+    setTimeout(() => {
+      setIsLoading(false)
+      navigate('/success')
+    }, 3000)
+  }
 
   useEffect(() => {
     handleTeenAccount(dob)
@@ -224,7 +200,7 @@ const New = () => {
               <div className="col-12 col-md-6 p-2 mt-3">
                 <CustomInput
                   label="FirstName (EN)"
-                  register={register('fnameEn')}
+                  register={register('fnameEn', { required: true })}
                   icon={PersonGradientIcon}
                   required
                 />
@@ -286,7 +262,7 @@ const New = () => {
               </div>
               <div className="col-12 col-md-6 p-2">
                 <div className="row">
-                  <div className="col-md-6 col-6">
+                  <div className="col-md-6 col-6 pe-0">
                     <CustomDatePicker
                       label="Issue Date"
                       control={control}
@@ -294,7 +270,7 @@ const New = () => {
                       name="issueDate"
                     />
                   </div>
-                  <div className="col-md-6 col-6">
+                  <div className="col-md-6 col-6 ps-1">
                     <CustomDatePicker
                       label="Expire Date"
                       control={control}
@@ -326,9 +302,16 @@ const New = () => {
                   register={register('email')}
                   icon={EmailIcon}
                   required
+                  error={errors}
                 />
 
-                <ErrorMessage errors={errors} name="email" />
+                <ErrorMessage
+                  errors={errors}
+                  name="email"
+                  render={({ message }) => (
+                    <span className="error-msg">{message}</span>
+                  )}
+                />
               </div>
             </div>
           </div>
@@ -633,10 +616,12 @@ const New = () => {
             </Link>
             <button
               style={{ textDecoration: 'none' }}
-              className="cnb-btn rounded-3 text-white"
+              className="cnb-btn rounded-3 text-white d-flex align-items-center gap-2"
               id="submit"
               type="submit"
+              disabled={isLoading}
             >
+              {isLoading && <Spinner size="sm" />}
               Submit
             </button>
           </div>

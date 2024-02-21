@@ -393,13 +393,13 @@ body {
 /* Create an active/current tablink class */
 .tab button.active {
   font-size: 18px;
-  background: var(--text-gradient);
+  background: var(--card-gradient-sm);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 
   border-bottom: 2px solid transparent;
-  border-image: var(--text-gradient);
+  border-image: var(--card-gradient-sm);
   border-image-slice: 1;
 }
 
@@ -981,24 +981,11 @@ nav {
 .wrap-table {
   border: 1px solid #454545;
   border-radius: 6px;
+  padding: 20px;
 }
 
-.wrap-table thead tr th {
-  font-size: 13px;
-  font-weight: bold;
-}
-
-.wrap-table tbody tr td {
-  padding: 21px 0;
-  color: #4d4d4d;
-}
-
-.wrap-table tbody tr {
-  border-bottom: 1px solid #454545;
-}
-
-.wrap-table tbody tr:last-child {
-  border-bottom: none;
+.wrap-table .col-md-6 {
+  border-bottom: 1px solid #797979;
 }
 
 .toggle-btn:disabled {
@@ -1271,6 +1258,36 @@ nav {
   }
 }
 
+.khqr-container {
+  display: flex;
+  background: #fff;
+  border-radius: 15px;
+  width: 65%;
+  min-width: 270px;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 0 20px 3px #d5d3d373;
+
+  .qr-header {
+    width: 100%;
+    background: #e1232e;
+    text-align: center;
+    padding: 1.25rem 0;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -34px;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-top: 35px solid #e1232e;
+      border-left: 25px solid transparent;
+    }
+  }
+}
+
 .cnb-radio {
   position: relative;
   display: flex;
@@ -1332,4 +1349,13 @@ nav {
 .close-btn {
   max-width: 28px;
   width: calc(10px + 2vw);
+}
+
+button#submit:disabled {
+  background: #ccc;
+}
+
+.error-msg {
+  color: #e34040;
+  font-size: 13px;
 }

@@ -17,7 +17,7 @@ const Layout = () => {
   const flexiBg = store((state) => state.flexiBg)
   const formData = store((state) => state.formData)
   const navigate = useNavigate()
-  const mainPath = ['/', '/e-services']
+  const mainPath = ['/', '/e-services', '/new']
 
   useEffect(() => {
     if (location.pathname === '/new') {

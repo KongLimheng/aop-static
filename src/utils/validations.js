@@ -7,7 +7,7 @@ export const AOPValidationSchema = Joi.object({
   lnameKh: Joi.string(),
   email: Joi.string()
     .email({ tlds: { allow: false } })
-    .required(),
+    .required('Email is required'),
 
   accountSetup: Joi.array(),
   dob: Joi.date(),
