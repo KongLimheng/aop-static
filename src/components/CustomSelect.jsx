@@ -33,7 +33,14 @@ const CustomValueContainer = ({ children, ...props }) => {
   )
 }
 
-const CustomSelect = ({ label, control, icon, name, options = [] }) => {
+const CustomSelect = ({
+  label,
+  control,
+  icon,
+  name,
+  options = [],
+  defaultValue = {},
+}) => {
   return (
     <div className="inputbox d-flex ">
       <Controller

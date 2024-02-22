@@ -35,6 +35,7 @@ import CustomSelectDouble from '../components/CustomSelectDouble'
 import CustomSwitch from '../components/CustomSwitch'
 import OptionGroup from '../components/OptionGroup'
 import { setFormData, setModalData, setOpenModal } from '../contexts/store'
+import { useCountries } from '../contexts/useHooks'
 import { calculateAge, getRandomAccount } from '../utils'
 import {
   accountType,
@@ -64,6 +65,7 @@ const New = () => {
   const [debitCardCheck, setDebitCardCheck] = useState(false)
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(false)
+  const tranCountries = useCountries()
 
   const {
     handleSubmit,
@@ -234,11 +236,14 @@ const New = () => {
 
               <div className="col-12 col-md-6 p-2 mt-2">
                 <CustomSelect
-                  options={[]}
+                  options={tranCountries}
                   label="Nationality"
                   control={control}
                   icon={NationalityIcon}
                   name="nationality"
+                  defaultValue={
+                    tranCountries.filter(({ value }) => value === 'KH')[0]
+                  }
                 />
               </div>
 
