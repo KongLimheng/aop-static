@@ -18,9 +18,7 @@ const CustomModal = ({ show, onHide, children, title }) => {
       >
         <Modal.Title id="contained-modal-title-center">{title}</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <div>{children}</div>
-      </Modal.Body>
+      <Modal.Body>{children}</Modal.Body>
     </Modal>
   )
 }

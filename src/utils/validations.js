@@ -20,7 +20,7 @@ export const AOPValidationSchema = Joi.object({
   nationality: Joi.object(),
   nidNumber: Joi.string(),
   phone: Joi.string(),
-  staffID: Joi.string(),
+  staffID: Joi.object(),
   'verify-phone': Joi.ref('phone'),
   feeCharge: Joi.object(),
   joinAccType: Joi.string(),

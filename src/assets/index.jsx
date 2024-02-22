@@ -16,6 +16,8 @@ import DigitalSignature from './icons/digital-signature.svg'
 import DownloadIcon from './icons/download-icon.svg'
 import EmailIcon from './icons/email.svg'
 import EmptyIcon from './icons/empty-img.svg'
+import EyeCloseIcon from './icons/eye-close.svg'
+import EyeOpenIcon from './icons/eye-open.svg'
 import FolderIcon from './icons/folder.svg'
 import ForwardArrowWhiteIcon from './icons/forward-arr-white.svg'
 import ForwardArrow from './icons/forward-arrow.svg'
@@ -29,6 +31,7 @@ import PhoneIcon from './icons/phone.svg'
 import PlusIcon from './icons/plus.svg'
 import Profile from './icons/profile.svg'
 import SecretParseIcon from './icons/secret-parse.svg'
+import SwitchCamIcon from './icons/switch-camera.svg'
 import ThreedotIcon from './icons/threedot.svg'
 import TickGradientIcon from './icons/tickGradientIcon.svg'
 
@@ -50,6 +53,8 @@ export {
   DownloadIcon,
   EmailIcon,
   EmptyIcon,
+  EyeCloseIcon,
+  EyeOpenIcon,
   FolderIcon,
   ForwardArrow,
   ForwardArrowWhiteIcon,
@@ -64,6 +69,7 @@ export {
   PlusIcon,
   Profile,
   SecretParseIcon,
+  SwitchCamIcon,
   ThreedotIcon,
   TickGradientIcon,
 }

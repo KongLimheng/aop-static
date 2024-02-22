@@ -1,14 +1,28 @@
+import GuestLayout from '../components/GuestLayout'
 import Layout from '../components/Layout'
 import MIniLayout from '../components/MIniLayout'
 import CustomerType from '../pages/CustomerType'
 import EService from '../pages/EService'
 import Home from '../pages/Home'
+import Login from '../pages/Login'
 import New from '../pages/New'
 import QuickTransfer from '../pages/QuickTransfer'
 import SuccessCreate from '../pages/SuccessCreate'
 import { renderRoutes } from './generate-routes'
 
 export const routes = [
+  {
+    layout: GuestLayout,
+    routes: [
+      {
+        name: 'login',
+        title: 'Login',
+        component: Login,
+        path: '/login',
+        isPublic: true,
+      },
+    ],
+  },
   {
     layout: MIniLayout,
     routes: [

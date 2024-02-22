@@ -9,7 +9,7 @@ import { Outlet } from 'react-router-dom'
  */
 const Layout = () => {
   return (
-    <div className={`w-100 justify-content-center align-items-center`}>
+    <div className={`w-100 min-vh-100 p-md-3 p-2`}>
       <div
         className={`wrap-container white-container`}
         style={{

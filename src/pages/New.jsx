@@ -78,7 +78,7 @@ const New = () => {
     watch,
     resetField,
   } = useForm({
-    mode: 'onChange',
+    mode: 'onSubmit',
     defaultValues: {
       fnameEn: '',
       // fnameKh: 'b',
@@ -118,6 +118,7 @@ const New = () => {
   const hadTeenAcc = liveAccountSetup.some((v) =>
     v.accountType.value.includes('Teen Account')
   )
+  console.log(errors)
   const handleTeenAccount = (dob) => {
     if (!dob) return
     const age = calculateAge(dob)
@@ -527,7 +528,7 @@ const New = () => {
                         {/* pick branch */}
 
                         <CustomSelect
-                          control={control}
+                          // control={control}
                           label="Pickup Branch"
                           icon={BranchIcon}
                           name="branch"
@@ -537,7 +538,7 @@ const New = () => {
                       <div className="col-12 col-md-6 p-2">
                         {/* Secret Phase */}
                         <CustomInput
-                          register={register('secretParse')}
+                          // register={register('secretParse')}
                           icon={SecretParseIcon}
                           label="Secret Phrase"
                           required
