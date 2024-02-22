@@ -16,10 +16,11 @@ export const AOPValidationSchema = Joi.object({
   gender: Joi.string(),
   cardType: Joi.object(),
   joinHolderCheck: Joi.bool(),
-  legalDocType: Joi.string(),
-  nationality: Joi.string(),
+  legalDocType: Joi.object(),
+  nationality: Joi.object(),
   nidNumber: Joi.string(),
   phone: Joi.string(),
   staffID: Joi.string(),
   'verify-phone': Joi.ref('phone'),
+  feeCharge: Joi.object(),
 })

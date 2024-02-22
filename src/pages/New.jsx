@@ -44,6 +44,8 @@ import {
   feeCharge,
   legalDocType,
   maritalStatus,
+  pickBranchs,
+  staffs,
   typeOfCard,
 } from '../utils/dataSelect'
 import { AOPValidationSchema } from '../utils/validations'
@@ -83,7 +85,7 @@ const New = () => {
       lnameEn: '',
       // lnameKh: 'c',
       // gender: 'd',
-      // nationality: '',
+      nationality: { label: 'KH Cambodia', value: 'KH' },
       // legalDocType: '',
       // nidNumber: '',
       email: '',
@@ -241,9 +243,6 @@ const New = () => {
                   control={control}
                   icon={NationalityIcon}
                   name="nationality"
-                  defaultValue={
-                    tranCountries.filter(({ value }) => value === 'KH')[0]
-                  }
                 />
               </div>
 
@@ -533,7 +532,7 @@ const New = () => {
                           label="Pickup Branch"
                           icon={BranchIcon}
                           name="branch"
-                          options={[]}
+                          options={pickBranchs}
                         />
                       </div>
                       <div className="col-12 col-md-6 p-2">
@@ -597,7 +596,7 @@ const New = () => {
           <div className="row">
             <div className="col-12 px-4">
               <div className="mt-4 fs-5">Staff Referral</div>
-              <div className="pt-1" style={{ color: '#797979', fontSize: 14 }}>
+              <div className="py-3" style={{ color: '#797979', fontSize: 14 }}>
                 Please select Staff ID
               </div>
               {/* input field: Staff  ID */}
@@ -606,7 +605,7 @@ const New = () => {
                 name="staffID"
                 label="Staff ID"
                 icon={PersonGradientIcon}
-                options={[]}
+                options={staffs}
               />
             </div>
           </div>

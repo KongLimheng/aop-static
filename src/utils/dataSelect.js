@@ -1,3 +1,5 @@
+import { getRandomAccount } from '.'
+
 export const legalDocType = [
   { value: 'nid', label: 'NID' },
   { value: 'passport', label: 'Passport' },
@@ -94,6 +96,64 @@ export const maritalStatus = [
   {
     value: 'Widowed',
     label: 'Widowed',
+  },
+]
+
+export const pickBranchs = [
+  { value: 'KH0010001', label: 'Main Branch' },
+  { value: 'KH0010002', label: 'Olympic Branch' },
+  { value: 'KH0010003', label: ' Sihanouk Ville Branch' },
+
+  { value: 'KH0010004', label: 'Battambang Branch' },
+  { value: 'KH0010005', label: 'Kampong Cham Branch' },
+  { value: 'KH0010006', label: 'Charles De Gaulle Branch' },
+
+  { value: 'KH0010007', label: 'Pailin Branch' },
+  { value: 'KH0010008', label: 'Siem Reap Sky Branch' },
+
+  { value: 'KH0010009', label: 'Poi Pet Branch' },
+]
+
+export const staffs = [
+  {
+    label: 'Khan Chansreyrath',
+    value: getRandomAccount(6),
+  },
+  {
+    label: 'Kong Limheng',
+    value: getRandomAccount(6),
+  },
+  {
+    label: 'Khou Pheakdey',
+    value: getRandomAccount(6),
+  },
+  {
+    label: 'Ny Clinton',
+    value: getRandomAccount(6),
+  },
+  {
+    label: 'Nhim Monica',
+    value: getRandomAccount(6),
+  },
+  {
+    label: 'Reth Soklin',
+    value: getRandomAccount(6),
+  },
+  {
+    label: 'Sroy Thol',
+    value: getRandomAccount(6),
+  },
+  {
+    label: 'Kheut Kunthea',
+    value: getRandomAccount(6),
+  },
+  {
+    label: 'Khorl Sokleab',
+    value: getRandomAccount(6),
+  },
+  {
+    label: 'Huy Chantha',
+    value: getRandomAccount(6),
   },
 ]
 

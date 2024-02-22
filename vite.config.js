@@ -34,7 +34,7 @@ const manifestForPlugIn = {
     ],
     theme_color: '#ffffffb3',
     background_color: '#fff',
-    display: 'standalone',
+    display: 'fullscreen',
     scope: '/',
     start_url: '/',
     orientation: 'any',
