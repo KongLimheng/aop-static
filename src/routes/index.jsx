@@ -55,7 +55,7 @@ export const routes = [
         title: 'Home page',
         component: Home,
         path: '/',
-        isPublic: true,
+        // isPublic: true,
       },
 
       {

@@ -1,35 +1,98 @@
+import { ErrorMessage } from '@hookform/error-message'
 import React, { useState } from 'react'
 import { Col, Row } from 'react-bootstrap'
+import { useCookies } from 'react-cookie'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import { EyeCloseIcon, EyeOpenIcon } from '../assets'
 
 const Login = () => {
   const [showPwd, setShowPwd] = useState(false)
-  const { register, handleSubmit } = useForm({
-    defaultValues: { username: 'CNB Portal', password: 'cnb@123' },
+  const [isLoading, setIsLoading] = useState(false)
+  const navigate = useNavigate()
+  const [_, setCookie] = useCookies(['user'])
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    mode: 'onChange',
+    defaultValues: { username: 'CNB Portal', password: 'cnb@1234' },
   })
+  console.log(errors)
 
-  const submitHandler = (data) => {
-    console.log(data)
+  const submitHandler = ({ username, password }) => {
+    setIsLoading(true)
+    setTimeout(() => {
+      setIsLoading(false)
+      setCookie('user', JSON.stringify({ username, password }), {
+        maxAge: 300,
+      })
+      // localStorage.setItem(
+      //   'token',
+      //   JSON.stringify({
+      //     username,
+      //     password,
+      //     exp: currentDate.setMinutes(currentDate.getMinutes() + 5),
+      //   })
+      // )
+
+      // navigate('/')
+    }, 3000)
   }
 
   return (
-    <div className="w-100 position-relative ">
-      <img
+    <div
+      className="w-100"
+      style={{
+        background: `url("/images/bg-tower.png")`,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'right',
+      }}
+    >
+      {isLoading && (
+        <div id="page">
+          <div id="container">
+            <div id="ring"></div>
+            <div id="ring"></div>
+            <div id="ring"></div>
+            <div id="ring"></div>
+          </div>
+        </div>
+      )}
+
+      {/* <img
         src="./src/assets/icons/bg-tower.svg"
         alt="tower"
         className="position-absolute end-0 vh-100 w-100"
-      />
+      /> */}
       <Row className="vh-100 ">
-        <Col xl="6" lg="6" md="12" className="d-none d-lg-block">
-          <div className="background">
-            <div className="vh-100 d-flex flex-column justify-content-center align-items-center w-100">
-              <div className="l-width l-top flex-grow-1">
-                <img src="/images/top.png" alt="" className="w-100 mb-4" />
-              </div>
-              <div className="l-width l-bottom flex-grow-1">
-                <img src="/images/bottom.png" alt="" className="w-100" />
-              </div>
+        <Col xl="6" lg="6" md="12" className="d-none d-lg-block px-0">
+          <div className="background d-flex align-items-center">
+            <div className="d-flex flex-column vh-100 justify-content-center align-items-center w-100">
+              {/* <img
+                src="./src/assets/icons/login.png"
+                alt=""
+                className="w-100 h-100"
+              /> */}
+              <img
+                src="/images/top.png"
+                alt=""
+                className="w-100 mb-4"
+                style={{
+                  maxWidth: 650,
+                }}
+              />
+              <img
+                src="/images/bottom.png"
+                alt=""
+                className="w-100"
+                style={{
+                  maxWidth: 650,
+                }}
+              />
+              {/* <div className="l-width l-top flex-grow-1"></div>
+              <div className="l-width l-bottom flex-grow-1"></div> */}
             </div>
           </div>
         </Col>
@@ -37,18 +100,27 @@ const Login = () => {
           xl="6"
           lg="6"
           md="12"
-          style={{
-            background: '#fff',
-          }}
+          // style={{
+          //   background: '#fff',
+          // }}
+          className="bg-white px-0"
         >
-          <div className="d-flex flex-column justify-content-center w-100 h-100 px-5 px-lg-2">
+          <div
+            className="d-flex flex-column justify-content-center w-100 h-100 px-4 px-lg-5"
+            style={{
+              background: `url("/images/bg-tower.png")`,
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'right bottom',
+              backgroundSize: 'cover',
+            }}
+          >
             <div className="login-section">
               <img
                 className="logo-img mb-4"
                 src="/images/cnb-banner.png"
                 alt="banner"
               />
-              <div style={{ width: 'fit-content' }} className="mb-4">
+              <div style={{ width: 'fit-content' }} className="my-4">
                 <div className="title">Center of Excellence</div>
                 <div
                   style={{ fontFamily: '"Acme-Regular", sans-serif' }}
@@ -72,7 +144,12 @@ const Login = () => {
                 <div className="textbox d-flex align-items-center w-100">
                   <input
                     type={showPwd ? 'text' : 'password'}
-                    {...register('password')}
+                    {...register('password', {
+                      required: {
+                        value: true,
+                        message: 'Password is required.',
+                      },
+                    })}
                     id="pwd"
                     className="input"
                     required
@@ -91,6 +168,14 @@ const Login = () => {
                     )}
                   </span>
                 </div>
+
+                <ErrorMessage
+                  errors={errors}
+                  name="password"
+                  render={({ message }) => (
+                    <span className="error-msg">{message}</span>
+                  )}
+                />
                 {/* Button trigger modal */}
                 {/* Please delete this */}
                 {/* <button type="button" class="btn btn-primary" data-bs-toggle="modal"

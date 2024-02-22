@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useCookies } from 'react-cookie'
 import { countries } from '../utils/dataSelect'
 
 export const useCountries = () => {
@@ -13,4 +14,9 @@ export const useCountries = () => {
   }, [countries])
 
   return tranCountries
+}
+
+export const useAuthentication = () => {
+  const [cookie] = useCookies(['user'])
+  return !!cookie.user
 }

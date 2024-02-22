@@ -1,8 +1,12 @@
 import React from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
 
-const PrivateRoute = ({ hasData, isPublic }) => {
-  return hasData || !!isPublic ? <Outlet /> : <Navigate to="/new" replace />
+const PrivateRoute = ({ isAuthenticated, isPublic }) => {
+  return isAuthenticated || !!isPublic ? (
+    <Outlet />
+  ) : (
+    <Navigate to="/login" replace />
+  )
 }
 
 export default PrivateRoute

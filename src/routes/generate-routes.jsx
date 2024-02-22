@@ -26,9 +26,7 @@ export const renderRoutes = (mainRoutes) => {
                 <Route
                   path={path}
                   key={name}
-                  element={
-                    <PrivateRoute hasData={hasData} isPublic={isPublic} />
-                  }
+                  element={<PrivateRoute isPublic={isPublic} />}
                 >
                   <Route path={path} element={<Component />} name={name} />
                 </Route>
