@@ -128,7 +128,6 @@ const New = () => {
     }
   }
 
-  console.log(errors)
   const submitHandler = (data) => {
     setIsLoading(true)
     liveAccountSetup.forEach((acc) => {
@@ -419,7 +418,7 @@ const New = () => {
               {/* join holder section */}
               <div className="row">
                 {/* switch join holder */}
-                <div className="col-12 px-0 mb-4">
+                <div className="col-12 px-0 mb-2">
                   <div className="d-flex align-items-center mt-4 mx-2">
                     <CustomSwitch control={control} name="joinHolderCheck" />
 

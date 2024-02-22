@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Outlet } from 'react-router-dom'
 
 /**
@@ -8,10 +8,6 @@ import { Outlet } from 'react-router-dom'
  * @returns
  */
 const Layout = () => {
-  useEffect(() => {
-    console.log(location.pathname)
-  })
-
   return (
     <div className={`w-100 justify-content-center align-items-center`}>
       <div

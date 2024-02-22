@@ -37,7 +37,7 @@ const manifestForPlugIn = {
     display: 'fullscreen',
     scope: '/',
     start_url: '/',
-    orientation: 'any',
+    orientation: 'portrait',
   },
 }
 // https://vitejs.dev/config/
