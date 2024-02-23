@@ -75,7 +75,12 @@ const EService = () => {
 
                     <div className="pt-2 view-more text-gradient">
                       view more
-                      <img src={ForwardArrow} alt="" width="20" />
+                      <img
+                        src={ForwardArrow}
+                        alt=""
+                        width="20"
+                        loading="lazy"
+                      />
                     </div>
 
                     <img
@@ -158,6 +163,7 @@ const EService = () => {
                       alt=""
                       width="75"
                       style={{ opacity: 0.7 }}
+                      loading="lazy"
                     />
                   </span>
                 </div>
@@ -182,7 +188,12 @@ const EService = () => {
                   <div className="pt-4 view-more">
                     view more
                     <span>
-                      <img src={ForwardArrowWhiteIcon} alt="" width="20" />
+                      <img
+                        src={ForwardArrowWhiteIcon}
+                        alt=""
+                        width="20"
+                        loading="lazy"
+                      />
                     </span>
                   </div>
 
@@ -190,6 +201,7 @@ const EService = () => {
                     src={AmendIcon}
                     alt=""
                     className="position-absolute bottom-0 end-0 rounded-4"
+                    loading="lazy"
                   />
                 </div>
               </div>

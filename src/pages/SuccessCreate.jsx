@@ -1,12 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { SuccessIcon } from '../assets'
-import { store } from '../contexts/store'
+import { setFlexiBg, store } from '../contexts/store'
 import { getRandomAccount, getSymbol } from '../utils'
 
 const SuccessCreate = () => {
   const { fnameEn, lnameEn, accountSetup } = store((state) => state.formData)
+  const {
+    accountNumber,
+    accountType: { label },
+    currency: { label: labelCur },
+  } = accountSetup[0]
+
+  useEffect(() => {
+    setFlexiBg('#ffffffb3')
+  })
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center gap-2">
@@ -34,28 +43,28 @@ const SuccessCreate = () => {
             {fnameEn} {lnameEn}
           </Col>
         </Row>
-        {accountSetup?.map(({ accountNumber, accountType, currency }) => (
-          <Row key={accountNumber} className="row-gap-3 pt-3 ">
-            <Col md="6" className="">
-              Account Number:
-            </Col>
-            <Col md="6" className="text-end ">
-              {accountNumber}
-            </Col>
-            <Col md="6" className="">
-              Account Type:
-            </Col>
-            <Col md="6" className="text-end ">
-              {accountType.value}
-            </Col>
-            <Col md="6" className="">
-              Account Currency:
-            </Col>
-            <Col md="6" className="text-end ">
-              {currency.label} ({getSymbol(currency.label)})
-            </Col>
-          </Row>
-        ))}
+        <Row className="row-gap-3 pt-3 ">
+          <Col md="6" className="">
+            Account Number:
+          </Col>
+          <Col md="6" className="text-end ">
+            {accountNumber}
+          </Col>
+          <Col md="6" className="">
+            Account Type:
+          </Col>
+          <Col md="6" className="text-end ">
+            {label}
+          </Col>
+          <Col md="6" className="border-0">
+            Account Currency:
+          </Col>
+          <Col md="6" className="text-end border-0">
+            {labelCur} ({getSymbol(labelCur)})
+          </Col>
+        </Row>
+        {/* {accountSetup?.map(({ accountNumber, accountType, currency }) => (
+        ))} */}
       </div>
       <div className="w-100 d-flex justify-content-between mt-3">
         <Link to="/" className="cnb-btn rounded-3 align-self-end">

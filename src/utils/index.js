@@ -27,11 +27,12 @@ export const calculateAge = (dob) => {
   return calAge
 }
 
-export const getSymbol = (currency) => {
+export const getSymbol = (currency = '') => {
+  console.log(currency)
   let sym
-  if (currency === 'USD') {
+  if (currency.toUpperCase() === 'USD') {
     sym = '$'
-  } else if (currency === 'KHR') {
+  } else if (currency.toUpperCase() === 'KHR') {
     sym = '៛'
   } else {
     sym = undefined

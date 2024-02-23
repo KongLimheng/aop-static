@@ -5,15 +5,18 @@ import { Link } from 'react-router-dom'
 import Select from 'react-select'
 import { CashIcon, CrossIcon, DownloadIcon, KHQRIcon } from '../assets'
 import CustomInput from '../components/CustomInput'
-import { store } from '../contexts/store'
+import { setFlexiBg, store } from '../contexts/store'
+import { useGetDataAccounts } from '../contexts/useHooks'
+import { getSymbol } from '../utils'
 
 const QuickTransfer = () => {
-  const { accountSetup, lnameEn, fnameEn } = store((state) => state.formData)
-  const [accountList, setAccountList] = useState([])
-  const [defaultSelect, setDefaultSelect] = useState({})
+  const { lnameEn, fnameEn } = store((state) => state.formData)
+  const accountList = useGetDataAccounts()
+  const [defaultSelect, setDefaultSelect] = useState(accountList[0])
+
+  const [symbol, setSymbol] = useState('')
   const [amount, setAmount] = useState('')
   const qrRef = useRef(null)
-
   /**
    *
    * @param {ChangeEvent} e
@@ -22,7 +25,7 @@ const QuickTransfer = () => {
     setAmount(e.target.value)
   }
 
-  const downloadQr = (name) => {
+  const downloadQr = () => {
     toPng(qrRef.current, { cacheBust: true, quality: 0.95 }).then((v) => {
       const a = document.createElement('a')
       a.download = fnameEn + lnameEn + '.png'
@@ -32,19 +35,9 @@ const QuickTransfer = () => {
   }
 
   useEffect(() => {
-    const dataTransform = accountSetup.map(
-      ({ accountNumber, accountType, currency }) => ({
-        label: `${accountType.label} ${accountNumber} ${currency.label}`,
-        value: accountType.value,
-        currency: currency.value,
-      })
-    )
-    setAccountList(dataTransform)
-  }, [accountSetup])
-
-  useEffect(() => {
-    setDefaultSelect(accountList[0])
-  }, [accountList])
+    setFlexiBg('#fff')
+    setSymbol(getSymbol(defaultSelect?.currency || 'USD'))
+  }, [defaultSelect])
 
   return (
     <div>
@@ -266,7 +259,7 @@ const QuickTransfer = () => {
                 {fnameEn} {lnameEn}
               </h5>
               <h1 className="px-4">
-                <span className="amount-symbol">$</span>
+                <span className="amount-symbol">{symbol}</span>
                 <span className="qr-amount">{amount || 0}</span>
               </h1>
               <div className="dash-devider w-100 border border-1" />
@@ -276,7 +269,7 @@ const QuickTransfer = () => {
                 value="https://www.canadiabank.com.kh/"
                 logoImage="/cana-logo.png"
                 ecLevel="H"
-                size={250}
+                size={220}
                 logoPadding={1}
                 logoPaddingStyle="circle"
                 eyeRadius={15}
@@ -284,37 +277,45 @@ const QuickTransfer = () => {
             </div>
           </div>
 
-          <div className="d-flex align-items-center justify-content-center  w-75">
-            {/* <CustomSelect
-              name="amount"
-              options={accountList || []}
-              label="Account"
-            /> */}
-            <Select
-              className="w-100 "
-              options={accountList || []}
-              value={defaultSelect}
-              onChange={(e) => setDefaultSelect(e)}
-              styles={{
-                control: (base) => ({
-                  ...base,
-                  boxShadow: 'none',
-                  border: 'none',
-                }),
-                option: (styles, { isDisabled, isFocused, isSelected }) => {
-                  return {
-                    ...styles,
-                    background: isSelected
-                      ? 'var(--card-gradient-sm)'
-                      : isFocused
-                      ? '#B2D4FF'
-                      : 'transparent',
-                    color: isSelected ? '#fff' : '#000',
-                    cursor: isDisabled ? 'not-allowed' : 'default',
-                  }
-                },
-              }}
-            />
+          <div className="d-flex align-items-center justify-content-center w-75">
+            {accountList.length && (
+              <Select
+                className="w-100 "
+                classNamePrefix="select-transfer"
+                defaultValue={accountList[0]}
+                name="amount"
+                options={accountList}
+                value={defaultSelect}
+                onChange={(e) => setDefaultSelect(e)}
+                styles={{
+                  control: (base) => ({
+                    ...base,
+                    boxShadow: 'none',
+                    border: 'none',
+                  }),
+
+                  option: (styles, { isDisabled, isFocused, isSelected }) => {
+                    return {
+                      ...styles,
+                      background: isDisabled
+                        ? undefined
+                        : isSelected
+                        ? 'var(--card-gradient-sm)'
+                        : isFocused
+                        ? '#B2D4FF'
+                        : 'transparent',
+                      color: isSelected ? '#fff' : '#000',
+                    }
+                  },
+
+                  dropdownIndicator: (base, { selectProps }) => ({
+                    ...base,
+                    transition: 'all .2s ease',
+                    transform: selectProps.menuIsOpen ? 'rotate(180deg)' : null,
+                  }),
+                }}
+              />
+            )}
           </div>
           {/* input amount */}
 
@@ -326,6 +327,7 @@ const QuickTransfer = () => {
             setChangeAmount={setAmount}
             type="number"
           />
+
           {/* screenshot & sharelink */}
           <div className="d-flex align-items-center mt-4">
             <button

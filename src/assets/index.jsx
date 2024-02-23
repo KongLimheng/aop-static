@@ -21,6 +21,7 @@ import EyeOpenIcon from './icons/eye-open.svg'
 import FolderIcon from './icons/folder.svg'
 import ForwardArrowWhiteIcon from './icons/forward-arr-white.svg'
 import ForwardArrow from './icons/forward-arrow.svg'
+import LogoutIcon from './icons/logout.svg'
 import MinusIcon from './icons/minus.svg'
 import NationalityIcon from './icons/nationality.svg'
 import NidCardIcon from './icons/nid_card.svg'
@@ -60,6 +61,7 @@ export {
   ForwardArrow,
   ForwardArrowWhiteIcon,
   KHQRIcon,
+  LogoutIcon,
   MinusIcon,
   NationalityIcon,
   NidCardIcon,

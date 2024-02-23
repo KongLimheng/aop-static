@@ -48,7 +48,7 @@ const CustomInput = ({
         <PatternFormat
           format="### ### ####"
           allowEmptyFormatting
-          mask="_"
+          // mask="_"
           className="input"
           name={register.name}
           onChange={register.onChange}

@@ -1,17 +1,34 @@
 import React from 'react'
+import { useCookies } from 'react-cookie'
 import { Link } from 'react-router-dom'
-import { FolderIcon, ThreedotIcon } from '../assets'
+import { FolderIcon, LogoutIcon, ThreedotIcon } from '../assets'
 
 const Home = () => {
+  const [cookie, _, removeCookies] = useCookies(['user'])
+  const handleLogout = () => {
+    removeCookies('user')
+  }
   return (
     <>
       <div className="d-flex align-items-start justify-content-between">
         <div>
           <div className="greeting-text">
-            <span className="custom-text">Hi</span>
+            <span className="custom-text">Hi {cookie.user.username}</span>
             👋
           </div>
           <div className="welcome-text">Welcome back to your workspace</div>
+        </div>
+
+        <div className="d-flex">
+          {/* <div className="me-2 svg-icon d-flex justify-content-between align-items-center">
+            <img src="../images/bell.svg" alt="bell" className="bell-icon" />
+          </div> */}
+          <div
+            className="svg-icon d-flex justify-content-between align-items-center"
+            onClick={handleLogout}
+          >
+            <img src={LogoutIcon} alt="logout" className="w-100" />
+          </div>
         </div>
       </div>
       {/* <!-- portal menu --> */}

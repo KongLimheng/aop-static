@@ -5,9 +5,9 @@ export const AOPValidationSchema = Joi.object({
   fnameKh: Joi.string(),
   lnameEn: Joi.string().required(),
   lnameKh: Joi.string(),
-  email: Joi.string()
-    .email({ tlds: { allow: false } })
-    .required('Email is required'),
+  email: Joi.string().allow(''),
+  // .email({ tlds: { allow: false } })
+  // .required('Email is required'),
 
   accountSetup: Joi.array(),
   dob: Joi.date(),
