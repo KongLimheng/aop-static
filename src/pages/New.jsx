@@ -4,8 +4,6 @@ import { useFieldArray, useForm } from 'react-hook-form'
 import { ErrorMessage } from '@hookform/error-message'
 import { joiResolver } from '@hookform/resolvers/joi'
 import { Spinner } from 'react-bootstrap'
-import 'react-calendar/dist/Calendar.css'
-import 'react-date-picker/dist/DatePicker.css'
 import { Link, useNavigate } from 'react-router-dom'
 import {
   BackArrow,
