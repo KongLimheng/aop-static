@@ -280,6 +280,7 @@ const QuickTransfer = () => {
           <div className="d-flex align-items-center justify-content-center w-75">
             {accountList.length && (
               <Select
+                components={{ IndicatorSeparator: false }}
                 className="w-100 "
                 classNamePrefix="select-transfer"
                 defaultValue={accountList[0]}

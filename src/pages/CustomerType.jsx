@@ -2,14 +2,6 @@ import { Link } from 'react-router-dom'
 import { BackArrow, CrossIcon, Profile } from '../assets'
 
 const CustomerType = () => {
-  // const setMaxWidth = store((state) => state.setMaxWidth)
-  // const setIsMini = store((state) => state.setIsMini)
-
-  // useEffect(() => {
-  //   setMaxWidth('640px')
-  //   setIsMini(true)
-  // })
-
   return (
     <>
       <div className="d-flex justify-content-between align-items-center">

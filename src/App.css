@@ -30,6 +30,7 @@
 .react-datepicker__day--selected {
   background: var(--card-gradient-sm);
 }
+
 .flotingLabelDate {
   translate: -40px -35.5px !important;
   scale: 0.875;
@@ -439,11 +440,11 @@ body {
 }
 
 .white-container {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(18.5px);
   border-radius: 2vw;
   -webkit-backdrop-filter: blur(18.5px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .custom-text {
@@ -1550,4 +1551,26 @@ button#submit:disabled {
 
 #display-error {
   width: 100%;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+.float-animate {
+  transform: translatey(0px);
+  animation: float 4s ease-out infinite;
+}
+
+.float-animate1 {
+  transform: translatey(0px);
+  animation: float 4s ease-in infinite;
 }

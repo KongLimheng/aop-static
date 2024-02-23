@@ -14,7 +14,7 @@ const MIniLayout = () => {
           maxWidth: 600,
           background: flexiBg,
           minWidth: 290,
-          opacity: 0.85,
+          opacity: flexiBg === '#fff' && 0.85,
         }}
       >
         <Outlet />

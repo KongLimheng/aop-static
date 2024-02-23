@@ -22,11 +22,22 @@ const Login = () => {
   console.log(errors)
 
   const submitHandler = ({ username, password }) => {
+    const now = new Date()
+    const mid = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate(),
+      23,
+      59,
+      59
+    )
+
     setIsLoading(true)
     setTimeout(() => {
       setIsLoading(false)
       setCookie('user', JSON.stringify({ username, password }), {
-        maxAge: 3600 * 24,
+        // maxAge: 3600 * 24,
+        expires: mid,
       })
       // localStorage.setItem(
       //   'token',
@@ -53,13 +64,6 @@ const Login = () => {
   }
 
   return (
-    // style={{
-    //   background: `url("/images/bg-tower.png")`,
-    //   backgroundRepeat: 'no-repeat',
-    //   backgroundPosition: 'right',
-    //   backgroundSize: 'contain',
-    // }}
-
     <Row className="vh-100 w-100 ms-0">
       <Col xl="6" lg="6" md="12" className="d-none d-lg-block px-0">
         <div className="background d-flex align-items-center">
@@ -67,7 +71,7 @@ const Login = () => {
             <img
               src="/images/top.png"
               alt=""
-              className="w-100 mb-4"
+              className="w-100 mb-4 float-animate"
               style={{
                 maxWidth: 460,
               }}
@@ -76,7 +80,7 @@ const Login = () => {
             <img
               src="/images/bottom.png"
               alt=""
-              className="w-100"
+              className="w-100 float-animate1"
               style={{
                 maxWidth: 460,
               }}
@@ -91,20 +95,15 @@ const Login = () => {
         xl="6"
         lg="6"
         md="12"
-        // style={{
-        //   background: '#fff',
-        // }}
         className="bg-white px-0"
+        style={{
+          background: `url("/images/bg-tower.png")`,
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'right bottom',
+          backgroundSize: 'cover',
+        }}
       >
-        <div
-          className="d-flex flex-column justify-content-center w-100 h-100 px-4 px-lg-5"
-          style={{
-            background: `url("/images/bg-tower.png")`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'right bottom',
-            backgroundSize: 'cover',
-          }}
-        >
+        <div className="d-flex flex-column justify-content-center w-100 h-100 px-4 px-lg-5">
           <div className="login-section">
             <img
               className="logo-img mb-4"
