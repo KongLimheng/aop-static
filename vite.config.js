@@ -2,6 +2,7 @@ import react from '@vitejs/plugin-react'
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 const manifestForPlugIn = {
+  id: 'aop',
   mode: 'production',
   registerType: 'autoUpdate',
   includeAssets: ['**/*', 'favicon.ico'],
@@ -38,6 +39,18 @@ const manifestForPlugIn = {
     scope: '/',
     start_url: '/',
     orientation: 'landscape-primary',
+    screenshots: [
+      {
+        src: '/images/1280x800-screenshot.png',
+        sizes: '1280x800',
+        type: 'image/png',
+      },
+      {
+        src: '/images/750x1334-screenshot.png',
+        sizes: '750x1334',
+        type: 'image/png',
+      },
+    ],
   },
 }
 // https://vitejs.dev/config/
