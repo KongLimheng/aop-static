@@ -43,7 +43,7 @@ const EService = () => {
         <Link to="/">
           <img src={BackArrow} alt="" width="36" />
         </Link>
-        <div className="pt-3 portal-title">E-Services</div>
+        <div className="pt-3 text-gradient fs-3">E-Services</div>
       </div>
 
       <div className="d-flex justify-content-between align-items-center">

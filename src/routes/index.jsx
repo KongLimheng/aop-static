@@ -31,7 +31,6 @@ export const routes = [
         title: 'Customer Type',
         component: CustomerType,
         path: '/customer-type',
-        isPublic: true,
       },
       {
         name: 'success',
@@ -55,7 +54,6 @@ export const routes = [
         title: 'Home page',
         component: Home,
         path: '/',
-        // isPublic: true,
       },
 
       {
@@ -63,14 +61,12 @@ export const routes = [
         title: 'E-Services',
         component: EService,
         path: '/e-services',
-        isPublic: true,
       },
       {
         name: 'new',
         title: 'Create Account',
         component: New,
         path: '/new',
-        isPublic: true,
       },
     ],
   },

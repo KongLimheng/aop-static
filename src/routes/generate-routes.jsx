@@ -14,7 +14,7 @@ export const generateFlatterRoutes = (routes = []) => {
 }
 
 export const renderRoutes = (mainRoutes) => {
-  const Routes = ({ hasData }) => {
+  const Routes = ({ isAuthenticated }) => {
     const layouts = mainRoutes.map(({ layout: Layout, routes }, index) => {
       const subRoutes = generateFlatterRoutes(routes)
       return (
@@ -26,7 +26,12 @@ export const renderRoutes = (mainRoutes) => {
                 <Route
                   path={path}
                   key={name}
-                  element={<PrivateRoute isPublic={isPublic} />}
+                  element={
+                    <PrivateRoute
+                      isPublic={isPublic}
+                      isAuthenticated={isAuthenticated}
+                    />
+                  }
                 >
                   <Route path={path} element={<Component />} name={name} />
                 </Route>

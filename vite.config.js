@@ -32,12 +32,12 @@ const manifestForPlugIn = {
         purpose: 'maskable',
       },
     ],
-    theme_color: '#ffffffb3',
+    theme_color: '#fff',
     background_color: '#fff',
-    display: 'fullscreen',
+    display: 'standalone',
     scope: '/',
     start_url: '/',
-    orientation: 'portrait',
+    orientation: 'landscape-primary',
   },
 }
 // https://vitejs.dev/config/
