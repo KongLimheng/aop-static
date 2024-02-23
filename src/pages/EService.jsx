@@ -60,11 +60,9 @@ const EService = () => {
                   className="position-relative text-decoration-none"
                 >
                   <div
-                    className="p-3 white-container rounded-4 p-4 position-relative"
+                    className="p-3 bg-white rounded-4 p-4 position-relative z-1"
                     style={{
                       height: '200px',
-                      zIndex: 10,
-                      background: '#ffffffeb !important',
                     }}
                   >
                     <div className="card-text text-gradient">
