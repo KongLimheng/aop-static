@@ -49,7 +49,7 @@ const QuickTransfer = () => {
   return (
     <div>
       <Link
-        to="/e-services"
+        to="/success"
         className="position-absolute"
         style={{ right: 30, top: 30 }}
       >

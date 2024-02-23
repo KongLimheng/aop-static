@@ -10,7 +10,9 @@ const MIniLayout = () => {
         className={`wrap-container white-container`}
         style={{
           maxWidth: 600,
-          background: '#ffffffb3',
+          background: `${
+            location.pathname === '/quick-transfer' ? '#fff' : '#ffffffb3'
+          }`,
           minWidth: 290,
         }}
       >

@@ -31,6 +31,7 @@ import PhoneIcon from './icons/phone.svg'
 import PlusIcon from './icons/plus.svg'
 import Profile from './icons/profile.svg'
 import SecretParseIcon from './icons/secret-parse.svg'
+import SuccessIcon from './icons/success.svg'
 import SwitchCamIcon from './icons/switch-camera.svg'
 import ThreedotIcon from './icons/threedot.svg'
 import TickGradientIcon from './icons/tickGradientIcon.svg'
@@ -69,6 +70,7 @@ export {
   PlusIcon,
   Profile,
   SecretParseIcon,
+  SuccessIcon,
   SwitchCamIcon,
   ThreedotIcon,
   TickGradientIcon,

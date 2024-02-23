@@ -19,9 +19,13 @@ export const AOPValidationSchema = Joi.object({
   legalDocType: Joi.object(),
   nationality: Joi.object(),
   nidNumber: Joi.string(),
-  phone: Joi.string(),
   staffID: Joi.object(),
-  'verify-phone': Joi.ref('phone'),
+  phone: Joi.string(),
+  'verify-phone': Joi.valid(Joi.ref('phone')).label('Verify Phone').messages({
+    'any.only': '{{#label}} does not match.',
+  }),
   feeCharge: Joi.object(),
   joinAccType: Joi.string(),
+  branch: Joi.object(),
+  secretParse: Joi.string().allow(''),
 })

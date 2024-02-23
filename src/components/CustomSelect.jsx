@@ -33,12 +33,22 @@ const CustomValueContainer = ({ children, ...props }) => {
   )
 }
 
-const CustomSelect = ({ label, control, icon, name, options = [] }) => {
+const CustomSelect = ({
+  label,
+  control,
+  icon,
+  name,
+  options = [],
+  required = false,
+}) => {
   return (
     <div className="inputbox d-flex">
       <Controller
         name={name}
         control={control}
+        rules={{
+          required,
+        }}
         render={({ field: { value, onChange } }) => {
           return (
             <Select
@@ -66,11 +76,11 @@ const CustomSelect = ({ label, control, icon, name, options = [] }) => {
                     minHeight: 48,
                   },
                 }),
-                MenuPortal: (base) => ({
-                  ...base,
-                  zIndex: 999,
-                }),
-                container: (provided, state) => {
+                // MenuPortal: (base) => ({
+                //   ...base,
+                //   zIndex: 999,
+                // }),
+                container: (provided) => {
                   return {
                     ...provided,
                     flex: 1,

@@ -26,7 +26,7 @@ const Login = () => {
     setTimeout(() => {
       setIsLoading(false)
       setCookie('user', JSON.stringify({ username, password }), {
-        maxAge: 300,
+        maxAge: 3600 * 24,
       })
       // localStorage.setItem(
       //   'token',
@@ -71,6 +71,7 @@ const Login = () => {
               style={{
                 maxWidth: 460,
               }}
+              loading="lazy"
             />
             <img
               src="/images/bottom.png"
@@ -79,6 +80,7 @@ const Login = () => {
               style={{
                 maxWidth: 460,
               }}
+              loading="lazy"
             />
             {/* <div className="l-width l-top flex-grow-1"></div>
               <div className="l-width l-bottom flex-grow-1"></div> */}

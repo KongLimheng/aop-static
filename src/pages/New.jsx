@@ -78,7 +78,7 @@ const New = () => {
     watch,
     resetField,
   } = useForm({
-    mode: 'onSubmit',
+    mode: 'onChange',
     defaultValues: {
       fnameEn: '',
       // fnameKh: 'b',
@@ -134,7 +134,6 @@ const New = () => {
     liveAccountSetup.forEach((acc) => {
       acc.accountNumber = getRandomAccount(13)
     })
-    console.log(data)
 
     setFormData(data)
     setTimeout(() => {
@@ -286,6 +285,7 @@ const New = () => {
               </div>
               <div className="col-12 col-md-6 p-2">
                 <CustomInput
+                  type="tel"
                   label="Phone Number"
                   icon={PhoneIcon}
                   register={register('phone')}
@@ -294,10 +294,19 @@ const New = () => {
               </div>
               <div className="col-12 col-md-6 p-2">
                 <CustomInput
+                  type="tel"
                   label="Verify Phone Number"
                   icon={PhoneIcon}
                   register={register('verify-phone')}
                   required
+                />
+
+                <ErrorMessage
+                  errors={errors}
+                  name="verify-phone"
+                  render={({ message }) => (
+                    <span className="error-msg">{message}</span>
+                  )}
                 />
               </div>
               <div className="col-12 p-2">
@@ -333,7 +342,7 @@ const New = () => {
                 const count = fields.length
                 return (
                   <div className="row mt-3 " key={item.id}>
-                    <div className="col-10 col-sm-10">
+                    <div className="col-11 col-sm-11">
                       <CustomSelectDouble
                         label="Account Type"
                         name={`accountSetup[${idx}]`}
@@ -346,7 +355,7 @@ const New = () => {
                     </div>
                     {idx > 0 ? (
                       <div
-                        className="col-2 col-sm-2 py-2 d-flex justify-content-end user-select-auto"
+                        className="col-1 col-sm-1 py-2 d-flex justify-content-end user-select-auto"
                         onClick={() => remove(idx)}
                       >
                         <img
@@ -358,7 +367,7 @@ const New = () => {
                       </div>
                     ) : (
                       <button
-                        className="col-2 col-sm-2 py-2 d-flex justify-content-end bg-transparent align-items-center"
+                        className="col-1 col-sm-1 py-2 d-flex justify-content-end bg-transparent align-items-center"
                         style={{
                           border: 'none',
                         }}
@@ -383,17 +392,6 @@ const New = () => {
                   </div>
                 )
               })}
-
-              {/* <div className="col-2 col-sm-1 p-2 mt-2 d-flex justify-content-end">
-                <img
-                  src="../images/plus.svg"
-                  id="add-acc"
-                  alt="plus"
-                  width={30}
-                  style={{ marginTop: 10, cursor: 'pointer' }}
-                />
-              </div> */}
-              {/* </div> */}
             </div>
           </div>
           {/* Additional Information section */}
@@ -486,8 +484,9 @@ const New = () => {
                       type="checkbox"
                       id="checkDebitCard"
                       name="checkDebitCard"
-                      onChange={() => setDebitCardCheck((prev) => !prev)}
+                      onChange={(v) => setDebitCardCheck((prev) => !prev)}
                     />
+
                     <div className="checkmark" />
                     <label htmlFor="checkDebitCard" className="mx-3 fs-6">
                       Debit Card
@@ -512,23 +511,21 @@ const New = () => {
                           child2={'type'}
                         />
                       </div>
+                      {/* Fee Charge*/}
                       <div className="col-12 col-md-6 p-2">
-                        {/* Fee Charge*/}
-
                         <CustomSelect
                           label="Fee Charge"
                           control={control}
                           icon={Profile}
-                          name={'feeCharge'}
+                          name="feeCharge"
                           options={feeCharge}
                         />
                       </div>
 
+                      {/* pick branch */}
                       <div className="col-12 col-md-6 p-2">
-                        {/* pick branch */}
-
                         <CustomSelect
-                          // control={control}
+                          control={control}
                           label="Pickup Branch"
                           icon={BranchIcon}
                           name="branch"
@@ -538,10 +535,10 @@ const New = () => {
                       <div className="col-12 col-md-6 p-2">
                         {/* Secret Phase */}
                         <CustomInput
-                          // register={register('secretParse')}
+                          register={register('secretParse')}
                           icon={SecretParseIcon}
                           label="Secret Phrase"
-                          required
+                          required={debitCardCheck}
                         />
                       </div>
                     </div>

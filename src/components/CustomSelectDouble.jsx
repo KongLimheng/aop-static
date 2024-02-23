@@ -178,9 +178,6 @@ const CustomSelectDouble = ({
       <Controller
         name={`${name}.${child2}`}
         control={control}
-        rules={{
-          required: true,
-        }}
         render={({ field: { value, onChange } }) => {
           return (
             <Select

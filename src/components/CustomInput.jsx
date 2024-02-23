@@ -1,5 +1,5 @@
 import React from 'react'
-import { NumericFormat } from 'react-number-format'
+import { NumericFormat, PatternFormat } from 'react-number-format'
 
 const CustomInput = ({
   register,
@@ -30,17 +30,7 @@ const CustomInput = ({
         }}
         loading="lazy"
       />
-      {type === 'number' ? (
-        // <InputMask
-        //   className="input"
-        //   {...register}
-        //   mask="_,___,___,___"
-        //   maxLength={15}
-        //   replacement={{ _: /\d/ }}
-        //   onBlur={(e) =>
-        //     setChangeAmount(register.value && register.value + '.00')
-        //   }
-        // />
+      {type === 'number' && (
         <NumericFormat
           type="text"
           thousandSeparator=","
@@ -52,7 +42,23 @@ const CustomInput = ({
           maxLength={15}
           onValueChange={(v) => setChangeAmount(v.formattedValue)}
         />
-      ) : (
+      )}
+
+      {type === 'tel' && (
+        <PatternFormat
+          format="### ### ####"
+          allowEmptyFormatting
+          mask="_"
+          className="input"
+          name={register.name}
+          onChange={register.onChange}
+          getInputRef={register.ref}
+          required={required}
+          // onValueChange={(v) => setChangeAmount(v.formattedValue)}
+        />
+      )}
+
+      {type === 'text' && (
         <input
           {...register}
           style={{ border: 'none' }}
@@ -64,6 +70,7 @@ const CustomInput = ({
           autoComplete="false"
         />
       )}
+
       <label htmlFor={register?.name}>
         {label}
         <div className="d-inline-flex" style={{ color: '#921d1d' }}>
