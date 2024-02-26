@@ -8,7 +8,7 @@ import { CalenderIcon } from '../assets'
 const CustomDatePicker = ({ label, control, getValues, name }) => {
   const hasDob = getValues(name)
   const [focus, setFocus] = useState(false)
-  const years = range(1990, getYear(new Date()) + 1, 1)
+  const years = range(1990, getYear(new Date()) + 11, 1)
   const months = [
     'January',
     'February',
