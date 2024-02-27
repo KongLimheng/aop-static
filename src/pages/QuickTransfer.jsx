@@ -281,7 +281,7 @@ const QuickTransfer = () => {
             {accountList.length && (
               <Select
                 components={{ IndicatorSeparator: false }}
-                className="w-100 "
+                className="w-75 "
                 classNamePrefix="select-transfer"
                 defaultValue={accountList[0]}
                 name="amount"
