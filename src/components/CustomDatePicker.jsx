@@ -47,7 +47,7 @@ const CustomDatePicker = ({ label, control, getValues, name }) => {
         render={({ field }) => (
           <DatePicker
             className="input"
-            autoComplete="none"
+            autoComplete="off"
             selected={field.value}
             onChange={(d) => field.onChange(d)}
             dateFormat="dd/MM/yyyy"
