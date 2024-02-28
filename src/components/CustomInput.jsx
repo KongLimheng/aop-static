@@ -67,7 +67,8 @@ const CustomInput = ({
           id={register?.name}
           // name="firstName"
           required={required}
-          autoComplete="false"
+          autoComplete="off"
+          maxLength={type === 'text' && 35}
         />
       )}
 

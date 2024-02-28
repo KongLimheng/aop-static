@@ -181,8 +181,8 @@ const New = () => {
         </div>
         <form onSubmit={handleSubmit(submitHandler)}>
           <div className="container-fluid px-0">
-            <div className="row gx-5 mx-0">
-              <div className="col-12 col-md-6 p-2 mt-3">
+            <div className="row gx-5 mx-0 row-gap-2 ">
+              <div className="col-12 col-md-6 p-2 ">
                 <CustomInput
                   label="First Name (KH)"
                   register={register('fnameKh')}
@@ -190,7 +190,7 @@ const New = () => {
                   required
                 />
               </div>
-              <div className="col-12 col-md-6 p-2 mt-3 ">
+              <div className="col-12 col-md-6 p-2  ">
                 <CustomInput
                   label="Last Name (KH)"
                   register={register('lnameKh')}
@@ -198,7 +198,7 @@ const New = () => {
                   required
                 />
               </div>
-              <div className="col-12 col-md-6 p-2 mt-3">
+              <div className="col-12 col-md-6 p-2 ">
                 <CustomInput
                   label="FirstName (EN)"
                   register={register('fnameEn', { required: true })}
@@ -206,7 +206,7 @@ const New = () => {
                   required
                 />
               </div>
-              <div className="col-12 col-md-6 p-2 mt-3">
+              <div className="col-12 col-md-6 p-2 ">
                 <CustomInput
                   label="Last Name (EN)"
                   register={register('lnameEn')}
@@ -215,7 +215,7 @@ const New = () => {
                 />
               </div>
 
-              <div className="col-12 col-md-6 p-2 mt-3">
+              <div className="col-12 col-md-6 p-2 ">
                 <CustomDatePicker
                   getValues={getValues}
                   control={control}
@@ -224,7 +224,7 @@ const New = () => {
                 />
               </div>
               {/* gender */}
-              <div className="col-12 col-md-6 p-2 mt-2">
+              <div className="col-12 col-md-6 p-2 ">
                 <OptionGroup
                   register={register('gender')}
                   label={'Gender'}
@@ -233,7 +233,7 @@ const New = () => {
                 />
               </div>
 
-              <div className="col-12 col-md-6 p-2 mt-2">
+              <div className="col-12 col-md-6 p-2 ">
                 <CustomSelect
                   options={tranCountries}
                   label="Nationality"
@@ -243,7 +243,7 @@ const New = () => {
                 />
               </div>
 
-              <div className="col-12 col-md-6 p-2 mt-2">
+              <div className="col-12 col-md-6 p-2 ">
                 <CustomSelect
                   control={control}
                   name="legalDocType"
