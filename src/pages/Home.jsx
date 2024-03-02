@@ -70,29 +70,32 @@ const Home = () => {
       <div className="menu-title custom-text pt-5 pb-3">Product Features</div>
       <div className="container-fluid px-0">
         <div className="row g-3 mx-0">
-          <div className="col-12 col-md-8 col-xl-4">
+          <div className="col-12 col-md-8 col-xl-8">
             <img
               style={{
-                borderRadius: 20,
+                borderRadius: 25,
               }}
               className=" w-100 h-100 "
               src="/images/saving-showcase.png"
               alt=""
             />
           </div>
-          <div className="col-6 col-md-4 col-xl-2 image-box">
+          <div className="col-6 col-md-4 col-xl-4">
             <img
-              className="rounded-4 w-100 h-100"
+              className="w-100 h-100"
+              style={{
+                borderRadius: 25,
+              }}
               src="/images/sm-showcase.png"
               alt=""
             />
           </div>
 
-          <div className="col-6 col-md-4 col-xl-2 image-box">
+          <div className="col-6 col-md-4 col-xl-4">
             <img className="n w-100 h-100" src="/images/Group94.png" alt="" />
           </div>
 
-          <div className="col-12 col-md-8 col-xxl-4 image-box">
+          <div className="col-12 col-md-8 col-xl-8 image-box">
             <img
               className="w-100 h-100"
               src="/images/core-showcase.png"
