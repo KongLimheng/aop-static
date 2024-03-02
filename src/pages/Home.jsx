@@ -70,38 +70,32 @@ const Home = () => {
       <div className="menu-title custom-text pt-5 pb-3">Product Features</div>
       <div className="container-fluid px-0">
         <div className="row g-3 mx-0">
-          <div className="col-12 col-md-8 col-xxl-4 image-box">
-            <img
-              className="object-fit-contain w-100 h-100"
-              src="/images/image 93.png"
-              alt=""
-            />
-          </div>
-          <div className="col-6 col-md-4 col-xxl-2 image-box">
-            <img
-              className="object-fit-contain w-100 h-100"
-              src="/images/Group 2.png"
-              alt=""
-            />
-          </div>
-
-          <div className="col-6 col-md-4 col-xxl-2 image-box">
-            <img
-              className="object-fit-contain w-100 h-100"
-              src="/images/Group94.png"
-              alt=""
-            />
-          </div>
-
-          <div className="col-12 col-md-8 col-xxl-4 image-box">
+          <div className="col-12 col-md-8 col-xl-4">
             <img
               style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'contain',
-                objectPosition: 'center',
+                borderRadius: 20,
               }}
-              src="/images/image 92.png"
+              className=" w-100 h-100 "
+              src="/images/saving-showcase.png"
+              alt=""
+            />
+          </div>
+          <div className="col-6 col-md-4 col-xl-2 image-box">
+            <img
+              className="rounded-4 w-100 h-100"
+              src="/images/sm-showcase.png"
+              alt=""
+            />
+          </div>
+
+          <div className="col-6 col-md-4 col-xl-2 image-box">
+            <img className="n w-100 h-100" src="/images/Group94.png" alt="" />
+          </div>
+
+          <div className="col-12 col-md-8 col-xxl-4 image-box">
+            <img
+              className="w-100 h-100"
+              src="/images/core-showcase.png"
               alt=""
             />
           </div>
