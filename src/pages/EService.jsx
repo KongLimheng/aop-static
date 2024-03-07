@@ -27,7 +27,7 @@ const EService = () => {
       background: true,
     },
     {
-      title: 'Account Closure',
+      title: 'Credit Card',
       icon: AccountCloseIcon,
       background: true,
     },
