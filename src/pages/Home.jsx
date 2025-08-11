@@ -1,4 +1,3 @@
-import React from 'react'
 import { useCookies } from 'react-cookie'
 import { Link } from 'react-router-dom'
 import { FolderIcon, LogoutIcon, ThreedotIcon } from '../assets'
@@ -33,7 +32,7 @@ const Home = () => {
       </div>
       {/* <!-- portal menu --> */}
       <div className="d-flex align-items-center justify-content-between mt-5 mb-2">
-        <div className="custom-text menu-title">Portal's Menu</div>
+        <div className="custom-text menu-title">Portal&apos;s Menu</div>
         <div className="text-white see-more">see more</div>
       </div>
 

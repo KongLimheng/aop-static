@@ -8,7 +8,6 @@ import { useAuthentication } from './contexts/useHooks'
 import { Routes } from './routes'
 
 function App() {
-  const formData = store((state) => state.formData)
   const { modalBody, modalTitle } = store((state) => state.modalData)
   const openModal = store((state) => state.openModal)
   const isAuthenticated = useAuthentication()

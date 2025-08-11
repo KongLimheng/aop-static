@@ -1,4 +1,3 @@
-import React from 'react'
 import { NumericFormat, PatternFormat } from 'react-number-format'
 
 const CustomInput = ({

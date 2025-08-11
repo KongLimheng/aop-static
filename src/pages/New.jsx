@@ -116,7 +116,6 @@ const New = () => {
   const hadTeenAcc = liveAccountSetup.some((v) =>
     v.accountType.value.includes('Teen Account')
   )
-  console.log(errors)
   const handleTeenAccount = (dob) => {
     if (!dob) return
     const age = calculateAge(dob)
@@ -142,7 +141,7 @@ const New = () => {
 
   useEffect(() => {
     handleTeenAccount(dob)
-    const { unsubscribe } = watch((value, { name, type }) => {
+    const { unsubscribe } = watch((value, { name }) => {
       console.log(name)
     })
     return () => unsubscribe()
@@ -482,7 +481,7 @@ const New = () => {
                       type="checkbox"
                       id="checkDebitCard"
                       name="checkDebitCard"
-                      onChange={(v) => setDebitCardCheck((prev) => !prev)}
+                      onChange={() => setDebitCardCheck((prev) => !prev)}
                     />
 
                     <div className="checkmark" />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Col } from 'react-bootstrap'
 import Camera, { IMAGE_TYPES } from 'react-html5-camera-photo'
 import { SwitchCamIcon } from '../assets'
@@ -6,7 +6,7 @@ import { setModalData, setOpenModal } from '../contexts/store'
 
 const Body = ({ setDataImage }) => {
   const [facingMode, setFacingMode] = useState('environment')
-
+  const [stream, setStream] = useState(null)
   const handleSwitchCam = () => {
     setFacingMode((prev) => (prev === 'environment' ? 'user' : 'environment'))
   }
