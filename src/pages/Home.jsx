@@ -94,7 +94,7 @@ const Home = () => {
             <img className="n w-100 h-100" src="/images/Group94.png" alt="" />
           </div>
 
-          <div className="col-12 col-md-8 col-xl-8 image-box">
+          <div className="col-12 col-md-8 col-xl-8">
             <img
               className="w-100 h-100"
               src="/images/core-showcase.png"
